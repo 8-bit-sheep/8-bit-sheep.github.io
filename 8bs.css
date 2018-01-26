@@ -1,0 +1,87 @@
+html {
+    background-color: black;
+    font-family: 'NimbusSanLRegular';
+    color: white;
+    font-size: 1.5vmax;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'NimbusSanLBold', sans-serif;
+    color: white;
+    font-size: 7.5vmax;
+    padding-top: 3px;
+}
+
+b, strong {
+    color: #7BADB6;
+}
+
+u, .underline {
+    color: #A9431E;
+    text-decoration: none;
+}
+
+
+i, em {
+    color: #FFCFBE;
+    font-style: normal;
+}
+
+p {
+    font-family: 'NimbusSanLBold';
+    color: white;
+    padding: 10;
+    
+}
+
+.target {
+    
+}
+
+/* unvisited link */
+a:link {
+    color: #FFCFBE;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #7BADB6;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FFCFBE;
+    text-decoration: underline;
+
+}
+
+/* selected link */
+a:active {
+    color: #FFCFBE;
+    text-decoration: underline;
+} 
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#outline-container-sec-1,
+#outline-container-sec-3,
+#outline-container-sec-5,
+#outline-container-sec-7,
+#outline-container-sec-9,
+#outline-container-sec-11,
+#outline-container-sec-13,
+#outline-container-sec-15,
+#outline-container-sec-17,
+#outline-container-sec-19,
+#outline-container-sec-21,
+#outline-container-sec-23 {
+    background-color: #A9431E;
+    padding-bottom: 10px;
+    padding-top: 1px;
+}
+
