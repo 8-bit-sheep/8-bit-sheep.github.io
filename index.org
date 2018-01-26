@@ -31,16 +31,6 @@
 * Your business is probably next
 * We can help. We dream of 8-bit-sheep
 
-#+BEGIN_CENTER
-  ︵  ︵ \\
-⁐(ө`` | ´´ө)⁐ \\
-\ | λ | / \\
-︶ \\
-
-
-∞
-#+END_CENTER
-
 
 * *Bellwether*
 
@@ -69,16 +59,6 @@ The phrase “dream of 8-bit-sheep” is of
 course a nod to the classic sci-fi novel by Philip K Dick “Do androids dream of electric sheep” which was adopted to the the screen by Ridley Scott in the masterpiece “Bladerunner”. Kallinen also belongs to the generation who first encountered digitalization by hacking 8-bit computers in the early 80ies.
 
 
-
-#+BEGIN_CENTER
-  ︵  ︵ \\
-⁐(ө`` | ´´ө)⁐ \\
-\ | λ | / \\
-︶ \\
-
-
-∞ \\
-#+END_CENTER
 
 
   #+BEGIN_CENTER
