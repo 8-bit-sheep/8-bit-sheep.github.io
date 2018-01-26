@@ -1,5 +1,5 @@
 #+Title: 8-bit-sheep
-#+Author: sheep in sheeps clothing
+#+Author: sheep in sheep's clothing
 #+Email: info@8-bit-sheep.com
 
 #+HTML_HEAD_EXTRA:  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nimbus-sans-l" type="text/css"/> 
