@@ -45,7 +45,7 @@ Sami founded his first professional online media service almost 25 years ago. Fo
 
 #+BEGIN_CENTER
 
-#+HTML: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS13kNT1Zwq6hz9cE7B4_87E1uAKzFu23G0PW-EXWw8CYXqfBYIOuzgjSKOBd4RFjZuc6dtB8gm80i1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="720" height="427" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+#+HTML: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS13kNT1Zwq6hz9cE7B4_87E1uAKzFu23G0PW-EXWw8CYXqfBYIOuzgjSKOBd4RFjZuc6dtB8gm80i1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="285" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 #+END_CENTER
 
