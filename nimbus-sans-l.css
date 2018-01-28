@@ -1,0 +1,277 @@
+
+
+@font-face {
+    font-family: 'NimbusSanLRegular';
+    src: url('./assets/NimbusSanL-Regu.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'NimbusSanLBold';
+    src: url('./assets/NimbusSanL-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/*
+@font-face {
+    font-family: 'NimbusSanLBold';
+    src: url('./assets/NimbusSanLBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLBoldItalic';
+    src: url('./assets/NimbusSanLBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+@font-face {
+    font-family: 'NimbusSanLConBold';
+        src: url('assets/NimbusSanLConBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLConBoldItalic';
+        src: url('assets/NimbusSanLConBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLConItalic';
+        src: url('assets/NimbusSanLConItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLConRegular';
+        src: url('assets/NimbusSanLConRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLItalic';
+    src: url('assets/NimbusSanLItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSanLRegular';
+    src: url('assets/NimbusSanLRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLBold';
+    src: url('assets/NimbusSansLBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLBoldCond';
+        src: url('assets/NimbusSansLBoldCond.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLBoldCondItal';
+        src: url('assets/NimbusSansLBoldCondItal.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+@font-face {
+    font-family: 'NimbusSansLBoldItalic';
+    src: url('assets/NimbusSansLBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLReguCond';
+        src: url('assets/NimbusSansLReguCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLReguCondItal';
+        src: url('assets/NimbusSansLReguCondItal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLReguItal';
+    src: url('assets/NimbusSansLReguItal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'NimbusSansLRegular';
+    src: url('assets/NimbusSansLRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+ /* The following rules are deprecated. */ 
+
+@font-face {
+    font-family: 'NimbusSanL';
+    src: url('assets/NimbusSanLBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanL';
+    src: url('assets/NimbusSanLBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanLCon';
+    src: url('assets/NimbusSanLConBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanLCon';
+    src: url('assets/NimbusSanLConBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanLCon';
+    src: url('assets/NimbusSanLConItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanLCon';
+    src: url('assets/NimbusSanLConRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanL';
+    src: url('assets/NimbusSanLItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'NimbusSanL';
+    src: url('assets/NimbusSanLRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLBoldCond.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLBoldCondItal.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLReguCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLReguCondItal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLReguItal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Nimbus Sans L';
+    src: url('assets/NimbusSansLRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+*/
