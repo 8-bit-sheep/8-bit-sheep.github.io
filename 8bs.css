@@ -12,7 +12,9 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'HelveticaNeue-Bold', 'NimbusSanLBold', sans-serif;
     color: white;
     font-size: 7.3vmax;
-    padding-top: 3px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 b, strong {
@@ -72,8 +74,9 @@ img {
 }
 
 .outline-2 {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #outline-container-sec-1,
@@ -89,7 +92,18 @@ img {
 #outline-container-sec-21,
 #outline-container-sec-23 {
     background-color: #A9431E;
-    padding-bottom: 10px;
-    padding-top: 1px;
+}
+
+#outline-container-sec-17 {
+    background-image: url("end-sheep.png");
+    background-size:100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2%;
+    height: 45vw;
+    
+}
+
+#outline-container-sec-17 h2 {
+    color: #FFCFBE;
 }
 
