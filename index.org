@@ -37,7 +37,7 @@
 * We've seen things few people would've believed
 * The media industry was just the start, you're probably next
 * We can help you dream of 8-bit-sheep
-* *Bellwether*
+* Our *Bellwether*
 
   #+BEGIN_CENTER
 [[file:sami-by-aino.jpg]]
