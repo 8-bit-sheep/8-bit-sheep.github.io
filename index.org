@@ -8,6 +8,13 @@
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 #+OPTIONS: ^:nil
+
+#+BEGIN_SRC emacs-lisp :exports none
+(setq org-html-validation-link nil)
+#+END_SRC
+
+#+RESULTS:
+
 [[file:logoanimation.gif]]
 
   #+BEGIN_CENTER
