@@ -78,19 +78,7 @@ img {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-#outline-container-sec-1,
-#outline-container-sec-3,
-#outline-container-sec-5,
-#outline-container-sec-7,
-#outline-container-sec-9,
-#outline-container-sec-11,
-#outline-container-sec-13,
-#outline-container-sec-15,
-#outline-container-sec-17,
-#outline-container-sec-19,
-#outline-container-sec-21,
-#outline-container-sec-23 {
+.outline-2:nth-child(even) {
     background-color: #A9431E;
 }
 
