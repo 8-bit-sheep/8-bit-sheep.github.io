@@ -28,7 +28,7 @@
 * Help with strategy, enterprise innovation, tech, user experience, metrics
 * This clever little lamb...
 * ...helps clients make sense of all the buzzwords
-* *Data science*, /machine learning/, AI or _blockchains_
+* *Data science*, /machine learning/, AI, +vim+, emacs or _blockchains_
 * Using a pool of the most talented professionals in their field, 8-bit-sheep teams are purpose built to fit the clients problems
 * 8-bit-sheep is a Chief _Digital_ / *Data* / /Technology/ Officers as a Service
 #+BEGIN_CENTER
