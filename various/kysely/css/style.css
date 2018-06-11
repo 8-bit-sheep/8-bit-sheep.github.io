@@ -1,11 +1,6 @@
 /* some style */
 .svg-container { 
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%; 
-    vertical-align: middle; 
-    overflow: hidden; 
+    
 }
 
 .svg-content { 
@@ -13,4 +8,21 @@
     position: absolute;
     top: 0;
     left: 0;
+
+}
+
+.svg-style {
+    border: "0px solid";
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+.triangle {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    
+
 }
