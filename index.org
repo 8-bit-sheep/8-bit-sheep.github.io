@@ -2,7 +2,8 @@
 #+Author: sheep in sheep's clothing
 #+Email: info@8-bit-sheep.com
 
-#+HTML_HEAD_EXTRA:  <link rel="stylesheet" media="screen" href="./nimbus-sans-l.css" type="text/css"/> 
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">  
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
 #+OPTIONS: num:nil
