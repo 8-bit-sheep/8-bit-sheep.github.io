@@ -1,0 +1,70 @@
+#+Title: 8-bit-sheep
+#+Author: sheep in sheep's clothing
+#+Email: info@8-bit-sheep.com
+
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">  
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
+
+#+BEGIN_SRC emacs-lisp :exports none
+(setq org-html-validation-link nil)
+#+END_SRC
+
+#+RESULTS:
+
+[[file:logoanimation.gif]]
+
+  #+BEGIN_CENTER
+[[https://twitter.com/8_bit_sheep][@8_bit_sheep]] | info@8-bit-sheep.com 
+  #+END_CENTER
+
+* Digital Strategy +Agency+ Network
+* This sheep means business
+* We help established brands to create a future worth their past
+* All the while the ground is shifting below their feet
+* Help with strategy, enterprise innovation, tech, user experience, metrics
+* This clever little lamb...
+* ...helps clients make sense of all the buzzwords
+* *Data science*, /machine learning/, AI, +vim+, emacs or _blockchains_
+* Using a pool of the most talented professionals in their field, 8-bit-sheep teams are purpose built to fit the clients problems
+* 8-bit-sheep is a Chief _Digital_ / *Data* / /Technology/ Officers as a Service
+#+BEGIN_CENTER
+ *Strategy, benchmarking, training, hiring, projects, portfolios*
+#+END_CENTER
+* We've seen things few people would've believed
+* The media industry was just the start, you're probably next
+* We can help you dream of 8-bit-sheep
+* The Company *Bellwether*
+
+  #+BEGIN_CENTER
+[[file:sami-by-aino.jpg]]
+
+  #+END_CENTER
+[[https://twitter.com/sakalli][ Sami Kallinen @sakalli]], aptly titled as the company’s bellwether, is part of the generation who first hacked 8-bit computers in the early 80’s. A seasoned executive with three superpowers — data & AI, visionary leadership, and media. For Sami, transformation is about understanding that everything today is software.
+Kallinen founded his first professional online media service almost 25 years ago. For three years he worked in the CDO role at Yle, the Finnish Broadcasting Company, where he was responsible for driving the modernisation of the application architecture, and introducing AI and data platforms early on to the organisation. Later, he worked in the management team of KSF Media for two years with CDO & CTO responsibilities. Sami has implemented radical transformation programmes both in terms of product development and leadership. Since 4 - 5 years ago, when it became apparent that data & AI are both a question of business hygiene and competitive advantage, the subject has very much been at the centre of Sami’s focus.
+
+* 
+
+#+BEGIN_CENTER
+
+#+HTML: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS13kNT1Zwq6hz9cE7B4_87E1uAKzFu23G0PW-EXWw8CYXqfBYIOuzgjSKOBd4RFjZuc6dtB8gm80i1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="285" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+#+END_CENTER
+  
+* “I’m a humanist that dreams of 8-bit sheep.”
+That’s how Sami Kallinen, the founder of 8-bit-sheep, introduced himself on Twitter for many years. The company name refers to Philip K. Dick’s classic sci-fi novel Do Androids Dream of Electric Sheep.
+
+  
+  
+
+  #+BEGIN_CENTER
+    ---
+[[https://twitter.com/8_bit_sheep][@8_bit_sheep]] | info@8-bit-sheep.com 
+  #+END_CENTER
+
+* Baaa
+

@@ -26,3 +26,71 @@
     
 
 }
+
+.HelveticaNeueLTPro-Roman { 
+	font-family: HelveticaNeueLTPro-Roman;
+	font-weight: normal;
+	font-style: normal;
+}
+.HelveticaNeueLTPro-Md { 
+	font-family: HelveticaNeueLTPro-Md;
+	font-weight: normal;
+	font-style: normal;
+}
+.HelveticaNeueLTPro-Bd { 
+	font-family: HelveticaNeueLTPro-Bd;
+	font-weight: normal;
+	font-style: normal;
+}
+.HelveticaNeueLTPro-Hv { 
+	font-family: HelveticaNeueLTPro-Hv;
+	font-weight: normal;
+	font-style: normal;
+}
+
+body { font-family: HelveticaNeueLTPro-Md; }
+
+h1, h2, h3, h4, h5 { 
+	font-family: HelveticaNeueLTPro-Bd; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+.HelveticaNeueLTPro-Hv { 
+	font-family: HelveticaNeueLTPro-Hv;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #7BADB6 !important;
+}
+
+/*b, strong {
+    color: #7BADB6;
+}
+
+u, .underline {
+    color: #A9431E;
+    text-decoration: none;
+}
+
+
+i, em {
+    color: #FFCFBE;
+    font-style: normal;
+}
+
+p {
+    font-family: 'NimbusSanLBold';
+    color: white;
+    padding: 10;
+    
+}
+
+.target {
+    
+}
+
+
+*/

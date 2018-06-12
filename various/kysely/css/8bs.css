@@ -1,27 +1,6 @@
-.HelveticaNeueLTPro-Roman { 
-	font-family: HelveticaNeueLTPro-Roman;
-	font-weight: normal;
-	font-style: normal;
-}
-.HelveticaNeueLTPro-Md { 
-	font-family: HelveticaNeueLTPro-Md;
-	font-weight: normal;
-	font-style: normal;
-}
-.HelveticaNeueLTPro-Bd { 
-	font-family: HelveticaNeueLTPro-Bd;
-	font-weight: normal;
-	font-style: normal;
-}
-.HelveticaNeueLTPro-Hv { 
-	font-family: HelveticaNeueLTPro-Hv;
-	font-weight: normal;
-	font-style: normal;
-}
-
 html {
     background-color: black;
-    font-family: HelveticaNeueLTPro-Md; 
+    font-family: 'HelveticaNeue','NimbusSanLRegular';
     color: white;
     font-size: 1.5vmax;
 
@@ -30,7 +9,7 @@ html {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: HelveticaNeueLTPro-Md; 
+    font-family: 'HelveticaNeue-Bold', 'NimbusSanLBold', sans-serif;
     color: white;
     font-size: 7.3vmax;
     padding-top: 0px;
@@ -54,7 +33,7 @@ i, em {
 }
 
 p {
-    font-family: HelveticaNeueLTPro-Roman; 
+    font-family: 'NimbusSanLBold';
     color: white;
     padding: 10;
     
