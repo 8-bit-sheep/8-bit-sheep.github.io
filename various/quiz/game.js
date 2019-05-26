@@ -56,7 +56,7 @@ let questions = [];
 //         console.log(err)
 //     });
 
-fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple')
+fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple&encode=url3986')
     .then(res => {
         return res.json();
     })
@@ -70,7 +70,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple')
             formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
             answerChoices.splice(formattedQuestion.answer -1, 0, loadedQuestion.correct_answer);
             answerChoices.forEach((choice, index) => {
-                formattedQuestion["choice" + (index+1)] = choice;
+                formattedQuestion["choice" + (index+1)] = decodeURIComponent(choice);
             })
             return formattedQuestion;
             
@@ -84,7 +84,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple')
 
 // constants
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 3;
 
 const startGame = () => {
     questionCounter = 0;
@@ -109,7 +109,7 @@ const getNewQuestion = () => {
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
+    question.innerText = decodeURIComponent(currentQuestion.question);
 
     choices.forEach( choice => {
         const number = choice.dataset['number'];
