@@ -1,0 +1,24 @@
+[{
+    "question": "Inside which HTML element do we put Javascript?",
+    "choice1": "<script>",
+    "choice2": "<javascript>",
+    "choice3": "<js>",
+    "choice4": "<scripting>",
+    "answer": 1
+    }, 
+     {  
+         "question": "Choose the correct JavaScript syntax to change the content of the following HTML code.",
+         "choice1": "document.getElement(\"sheep\").innerHTML=\"I am a Sheep\";",
+         "choice2": "document.getElementById(\"sheep\").innerHTML=\"I am a Sheep\";",
+         "choice3": "document.getId(\"sheep\")=\"I am a Sheep\";",
+         "choice4": "document.getElementById(\"sheep\").innerHTML=I am a Sheeppl;",
+         "answer": 2
+     },
+     {  
+         "question": "What is the correct syntax for referring to an external script called \"sheep.js\"?",
+         "choice1": "<script src=\"sheep.js\">",
+         "choice2": "<script href=\"sheep.js\">",
+         "choice3": "<script ref=\"sheep.js\">",
+         "choice4": "<script name=\"sheep.js\">",
+         "answer": 1
+     }]
