@@ -35,8 +35,10 @@ const getNewQuestion = () => {
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
-    source.innerText = currentQuestion.course;
-    section.innerText = currentQuestion.episode;
+    source.getElementsByTagName("a")[0].setAttribute("href", currentQuestion.url);
+    source.getElementsByTagName("a")[0].innerText = currentQuestion.course;
+    section.getElementsByTagName("a")[0].setAttribute("href", currentQuestion.url);
+    section.getElementsByTagName("a")[0].innerText = currentQuestion.episode;
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number]; 
