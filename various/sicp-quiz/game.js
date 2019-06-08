@@ -77,7 +77,7 @@ const incrementScore = num => {
 }
 
 
-d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv")
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQBFGoYTqluPD2bPBFrrSCxkC-5F9GmrFcE2ZAeTdO3VCaBLbxDsU88lxbLmI1AIE4p-iGqy1t5fFCl/pub?output=csv")
     .then(function(data) {
         questions = data;
         startGame(); // this was moved here
