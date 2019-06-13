@@ -75,12 +75,15 @@ const incrementScore = num => {
     scoreText.innerText = score;
 }
 
+
+const id =  window.location.search.split("=")[1];
+
+
 d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv")
     .then((data) => {
         questions = data.filter(question => {
-            const id =  window.location.search.split("=")[1];
-            if(id === "0") true
-            else question.courseId === id;
+            if(id === "0") return true
+            else return question.courseId === id;
         });
         startGame();
         // draw chart in here!
