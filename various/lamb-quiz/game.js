@@ -76,13 +76,17 @@ const incrementScore = num => {
 }
 
 d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv")
-  .then((data) => {
-    //  questions = data.filter(question => {if(question.course === "Crash Course Computer Science")return true})
-    questions = data.filter(question => question.courseId === window.location.search.split("=")[1])
-      startGame();
-      // data is now whole data set
-      // draw chart in here!
-  })
-  .catch(function(error){
-     // handle error   
-  })
+    .then((data) => {
+        questions = data.filter(question => {
+            const cId =  window.location.search.split("=")[1];
+            if(cId != "0")
+                question.courseId === cId;
+            else
+                true;
+        });
+        startGame();
+        // draw chart in here!
+    })
+    .catch(function(error){
+        // handle error   
+    })
