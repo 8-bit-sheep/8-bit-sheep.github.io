@@ -1,16 +1,15 @@
-:root {
-    background-color: #FFF;
-    background-color: #FFCFBE;
+
+:root{
     font-size:62.5%;
+    background-color: #FFCFBE;
 }
 
-* {
+*{
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #000;
-    
 }
 
 H1,
@@ -21,55 +20,32 @@ H4 {
 }
 
 H1 {
-    font-size: 5.4rem;
-    color: #FFCFBE;
-    color: #7BADB6;
+    FONT-SIZE:5.4REM;
     color: #A9431E;
-    margin-bottom:5rem;
+    margin-bottom: 5rem;
 }
 
-H1 > span {
-    font-size:2.4rem;
+h1 > span {
+    font-size: 4.2rem;
     font-weight: 500;
 }
-
-
-H2 {
+h2 {
     font-size: 4.2rem;
     margin-bottom: 4rem;
     font-weight: 700;
 }
 
-H3 {
+h3 {
     font-size: 2.8rem;
     font-weight: 500;
-    margin-bottom: 2.5rem;
-
 }
 
-H3 > a {
-    text-decoration: none;
-    font-size: 2.8rem;
-    margin-bottom: 2.5rem;
-
-}
-
-H4 {
+h4 {
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    
-}
-
-H4 > a {
-    text-decoration: none;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
     font-weight: 500;
 }
 
-
-/* utilites */
+/* utilities */
 
 .container {
     width: 100vw;
@@ -84,7 +60,6 @@ H4 > a {
 .container > * {
     width: 100%;
 }
-
 
 .flex-column {
     display: flex;
@@ -109,6 +84,7 @@ H4 > a {
 }
 
 /* buttons */
+
 .btn {
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -127,11 +103,30 @@ H4 > a {
     transform: translateY(-0.1rem);
     transition: transform 150ms;
 }
-
 .btn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
 
+/* forms */
 
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(123, 173, 182, 0.5);
+}
+
+input::placeholder {
+    color: #888;
+}
