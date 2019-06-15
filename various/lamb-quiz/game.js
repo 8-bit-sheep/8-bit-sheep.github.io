@@ -83,7 +83,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP
     .then((data) => {
         questions = data.filter(question => {
             if(id === "0") return true
-                       else return question.content Id === id;
+                       else return question.contentId === id;
         });
         startGame();
     })
