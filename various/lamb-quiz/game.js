@@ -32,7 +32,8 @@ const getNewQuestion = () => {
     questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    episodeNameText.innerText = currentQuestion.contentSegmet;
+    cu
+    episodeNameText.innerText = currentQuestion.contentSegment;
     courseNameText.innerText = currentQuestion.content;
     question.innerText = currentQuestion.question;
     urlNameText.href = currentQuestion.url;
@@ -51,15 +52,15 @@ choices.forEach(choice => {
     choice.addEventListener("click", e => {
        if(!acceptingAnswers) return;
        acceptinganswers = false;
-       const selectedChoice = e.target;
-       const selectedAnswer = selectedChoice.dataset["number"];
-       const classToApply = (selectedAnswer === currentQuestion.answer)? "correct":"incorrect";
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+        const classToApply = (selectedAnswer === currentQuestion.answer)? "correct":"incorrect";
 
-       if(classToApply === "correct") {
-           incrementScore(CORRECT_BONUS);
-       }
-    
-       console.log(classToApply);
+        if(classToApply === "correct") {
+            incrementScore(CORRECT_BONUS);
+        }
+        
+        console.log(classToApply);
        console.log(selectedAnswer);
 
        selectedChoice.parentElement.classList.add(classToApply);
@@ -83,7 +84,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP
     .then((data) => {
         questions = data.filter(question => {
             if(id === "0") return true
-                       else return question.contentId === id;
+            else return question.contentId === id;
         });
         startGame();
     })
