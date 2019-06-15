@@ -32,7 +32,6 @@ const getNewQuestion = () => {
     questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    cu
     episodeNameText.innerText = currentQuestion.contentSegment;
     courseNameText.innerText = currentQuestion.content;
     question.innerText = currentQuestion.question;
@@ -89,4 +88,5 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP
         startGame();
     })
     .catch(function(error){
+        //
     })
