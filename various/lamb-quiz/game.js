@@ -32,15 +32,15 @@ const getNewQuestion = () => {
     questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    episodeNameText.innerText = currentQuestion.episode;
-    courseNameText.innerText = currentQuestion.course;
+    episodeNameText.innerText = currentQuestion.contentSegmet;
+    courseNameText.innerText = currentQuestion.content;
     question.innerText = currentQuestion.question;
     urlNameText.href = currentQuestion.url;
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
     })
-  
+    
 availableQuestions.splice(questionIndex, 1);
 acceptingAnswers = true;
 
@@ -83,11 +83,9 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP
     .then((data) => {
         questions = data.filter(question => {
             if(id === "0") return true
-            else return question.courseId === id;
+                       else return question.content Id === id;
         });
         startGame();
-        // draw chart in here!
     })
     .catch(function(error){
-        // handle error   
     })
