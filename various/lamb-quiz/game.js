@@ -20,149 +20,135 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
+let cont = false;
+
 // state
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 50;
 
 const startGame = () => {
-  questionCounter = 0;
-  score = 0;
-  loader.classList.add("hidden");
-  if (id === "0") {
-    game.classList.remove("hidden");
-    availableQuestions = [...questions];
-    getNewQuestion();
-  } else {
-    segmentBox.classList.remove("hidden");
-    segmentSelector();
-  }
+    questionCounter = 0;
+    score = 0;
+    loader.classList.add("hidden");
+    if (id === "0") {
+        game.classList.remove("hidden");
+        availableQuestions = [...questions];
+        getNewQuestion();
+    } else {
+        segmentBox.classList.remove("hidden");
+        segmentSelector();
+    }
 };
 
 const segmentSelector = () => {
-  const segmentList = [
-    ...new Set(questions.map(question => question.contentSegment))
-  ];
-  segmentList.forEach(segment =>
-    createButtonInsideListItem(segmentButtons, segment)
-  );
+    const segmentList = [
+        ...new Set(questions.map(question => question.contentSegment))
+    ];
+    segmentList.forEach(segment =>
+                        createButtonInsideListItem(segmentButtons, segment)
+                       );
 };
 
 const createButtonInsideListItem = (list, text) => {
-  const li = document.createElement("li");
-  list.appendChild(li);
-  const button = document.createElement("button");
-  li.appendChild(button);
-  button.innerText = text;
-  button.classList.add("segment-btn");
-  button.addEventListener("click", startSegmentGame);
+    const li = document.createElement("li");
+    list.appendChild(li);
+    const button = document.createElement("button");
+    li.appendChild(button);
+    button.innerText = text;
+    button.classList.add("segment-btn");
+    button.addEventListener("click", startSegmentGame);
 };
 
 const startSegmentGame = e => {
-  availableQuestions = questions.filter(
-    question => question.contentSegment === e.target.innerText
-  );
-  getNewQuestion();
-  game.classList.remove("hidden");
-  segmentBox.classList.add("hidden");
+    availableQuestions = questions.filter(
+        question => question.contentSegment === e.target.innerText
+    );
+    getNewQuestion();
+    game.classList.remove("hidden");
+    segmentBox.classList.add("hidden");
 };
 
 const getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS - 1) {
-    localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("end.html?contentId=" + id);
-  }
+    cont = false;
+    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS - 1) {
+        localStorage.setItem("mostRecentScore", score);
+        return window.location.assign("end.html?contentId=" + id);
+    }
 
-  questionCounter++;
-  questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = availableQuestions[questionIndex];
-  episodeNameText.innerText = currentQuestion.contentSegment;
-  contentNameText.innerText = currentQuestion.content;
-  question.innerText = currentQuestion.question;
-  urlNameText.href = currentQuestion.url;
-  choices.forEach(choice => {
-    const number = choice.dataset["number"];
-    choice.innerText = currentQuestion["choice" + number];
-  });
+    questionCounter++;
+    questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    episodeNameText.innerText = currentQuestion.contentSegment;
+    contentNameText.innerText = currentQuestion.content;
+    question.innerText = currentQuestion.question;
+    urlNameText.href = currentQuestion.url;
+    choices.forEach(choice => {
+        const number = choice.dataset["number"];
+        choice.innerText = currentQuestion["choice" + number];
+    });
 
-  availableQuestions.splice(questionIndex, 1);
-  acceptingAnswers = true;
+    availableQuestions.splice(questionIndex, 1);
+    acceptingAnswers = true;
 };
+
+const continueGame = () => {
+    if(cont){
+        choices.forEach(choice => {
+            choice.parentElement.classList.remove(["incorrect"]);
+            choice.parentElement.classList.remove(["correct"]);
+        });
+        getNewQuestion();
+    } else return;
+}
+
+document.addEventListener("click", e => continueGame());
+
 
 choices.forEach(choice => {
-  choice.addEventListener("click", e => {
-    if (!acceptingAnswers) return;
-    acceptinganswers = false;
-    const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
-    const classToApply =
-      selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
+    choice.addEventListener("click", e => {
+        if (!acceptingAnswers | cont) return;
+        acceptinganswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+        const classToApply =
+              selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
 
-    if (classToApply === "correct") {
-      incrementScore(CORRECT_BONUS);
-    }
-    selectedChoice.parentElement.classList.add(classToApply);
-
-    if (classToApply === "correct") {
-      setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        getNewQuestion();
-      }, 500);
-    } else {
-      wrongAnswer();
-    }
-    /*else {
-      //setTimeout(() => {
-      choices.forEach(choice => {
-        if (choice.dataset["number"] === currentQuestion.answer) {
-          choice.parentElement.classList.add("correct");
+        if (classToApply === "correct") {
+            incrementScore(CORRECT_BONUS);
         }
-      });
-      //}, 200);
-      //acceptingAnswers = false;
-      console.log(acceptingAnswers);
-      //setTimeout(() => {
-      addEventListener("click", e => {
-        choices.forEach(choice => {
-          choice.parentElement.classList.remove(["incorrect"]);
-          choice.parentElement.classList.remove(["correct"]);
-        });
-        acceptingAnswers = false;
-        getNewQuestion();
-      });
-      //}, 500);
-    }*/
-  });
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        if (classToApply === "correct") {
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(classToApply);
+                getNewQuestion();
+            }, 500);
+        } else {
+            setTimeout(() => {
+                choices.forEach(choice => {
+                    if (choice.dataset["number"] === currentQuestion.answer) {
+                        choice.parentElement.classList.add("correct");
+                    }});
+                cont = true;
+            }, 200);
+        }
+    });
 });
 
-const wrongAnswer = () => {
-  setTimeout(() => {
-    choices.forEach(choice => {
-      if (choice.dataset["number"] === currentQuestion.answer) {
-        choice.parentElement.classList.add("correct");
-      }
-    });
-  }, 200);
-  setTimeout(() => {
-    choices.forEach(choice => {
-      choice.parentElement.classList.remove(["incorrect"]);
-      choice.parentElement.classList.remove(["correct"]);
-    });
-    getNewQuestion();
-  }, 1500);
-};
+
 
 const incrementScore = num => {
-  score += num;
-  scoreText.innerText = score;
+    score += num;
+    scoreText.innerText = score;
 };
 
 d3.csv(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv"
 ).then(data => {
-  questions = data.filter(question => {
-    if (id === "0") return true;
-    else return question.contentId === id;
-  });
-  startGame();
+    questions = data.filter(question => {
+        if (id === "0") return true;
+        else return question.contentId === id;
+    });
+    startGame();
 });
