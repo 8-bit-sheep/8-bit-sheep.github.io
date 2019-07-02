@@ -102,7 +102,7 @@ const continueGame = () => {
     } else return;
 }
 
-document.addEventListener("click", e => continueGame());
+document.body.addEventListener("click", e => continueGame());
 
 
 choices.forEach(choice => {
