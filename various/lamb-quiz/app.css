@@ -108,7 +108,8 @@ h4 {
   transform: none;
 }
 .btn.wide {
-  width: 100%;
+    width: 100%;
+    padding: 1rem;
 }
 
 /* forms */
