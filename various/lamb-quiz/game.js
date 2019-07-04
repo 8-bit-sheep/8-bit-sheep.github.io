@@ -73,10 +73,10 @@ const startSegmentGame = e => {
     isSegmentGame = true;
   }
   if (availableQuestions.length < maxQuestions) {
-    availableQuestions.length = availableQuestions;
+      maxQuestions = availableQuestions.length;
   }
-  getNewQuestion();
-  game.classList.remove("hidden");
+    getNewQuestion();
+    game.classList.remove("hidden");
   segmentBox.classList.add("hidden");
 };
 
