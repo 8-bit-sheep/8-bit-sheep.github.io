@@ -20,17 +20,22 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
+let cont = false;
+let maxQuestions = 20;
+let isSegmentGame = false;
+
 // state
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 50;
 
 const startGame = () => {
   questionCounter = 0;
   score = 0;
+  scoreText.innerText = score;
   loader.classList.add("hidden");
   if (id === "0") {
     game.classList.remove("hidden");
     availableQuestions = [...questions];
+    maxQuestions = 50;
     getNewQuestion();
   } else {
     segmentBox.classList.remove("hidden");
@@ -45,6 +50,7 @@ const segmentSelector = () => {
   segmentList.forEach(segment =>
     createButtonInsideListItem(segmentButtons, segment)
   );
+  createButtonInsideListItem(segmentButtons, "Play All!");
 };
 
 const createButtonInsideListItem = (list, text) => {
@@ -58,22 +64,35 @@ const createButtonInsideListItem = (list, text) => {
 };
 
 const startSegmentGame = e => {
-  availableQuestions = questions.filter(
-    question => question.contentSegment === e.target.innerText
-  );
+  if (e.target.innerText === "Play All!") {
+    availableQuestions = [...questions];
+  } else {
+    availableQuestions = questions.filter(
+      question => question.contentSegment === e.target.innerText
+    );
+    isSegmentGame = true;
+  }
+  if (availableQuestions.length < maxQuestions) {
+    availableQuestions.length = availableQuestions;
+  }
   getNewQuestion();
   game.classList.remove("hidden");
   segmentBox.classList.add("hidden");
 };
 
 const getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS - 1) {
+  cont = false;
+  if (availableQuestions.length === 0 || questionCounter > maxQuestions - 1) {
     localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("end.html?contentId=" + id);
+    if (isSegmentGame === false) {
+      return window.location.assign("end.html?contentId=" + id + "&all=1");
+    } else {
+      return window.location.assign("end.html?contentId=" + id);
+    }
   }
 
   questionCounter++;
-  questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;
+  questionCounterText.innerText = questionCounter + "/" + maxQuestions;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   episodeNameText.innerText = currentQuestion.contentSegment;
@@ -89,9 +108,32 @@ const getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
+const wrongAnswer = () => {
+  setTimeout(() => {
+    choices.forEach(choice => {
+      if (choice.dataset["number"] === currentQuestion.answer) {
+        choice.parentElement.classList.add("correct");
+      }
+    });
+    cont = true;
+  }, 200);
+};
+
+const continueGame = () => {
+  if (cont) {
+    choices.forEach(choice => {
+      choice.parentElement.classList.remove(["incorrect"]);
+      choice.parentElement.classList.remove(["correct"]);
+    });
+    getNewQuestion();
+  } else return;
+};
+
+document.body.addEventListener("click", e => continueGame());
+
 choices.forEach(choice => {
   choice.addEventListener("click", e => {
-    if (!acceptingAnswers) return;
+    if (!acceptingAnswers | cont) return;
     acceptinganswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
@@ -101,15 +143,17 @@ choices.forEach(choice => {
     if (classToApply === "correct") {
       incrementScore(CORRECT_BONUS);
     }
-
-    console.log(classToApply);
-    console.log(selectedAnswer);
-
     selectedChoice.parentElement.classList.add(classToApply);
-    setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
-      getNewQuestion();
-    }, 500);
+
+    if (classToApply === "correct") {
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        getNewQuestion();
+      }, 500);
+    } else {
+      acceptingAnswers = false;
+      wrongAnswer();
+    }
   });
 });
 
