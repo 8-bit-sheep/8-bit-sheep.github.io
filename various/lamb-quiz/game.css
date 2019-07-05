@@ -1,16 +1,10 @@
 .choice-container {
-  display: flex;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  font-size: 1.8rem;
-  border: 0.1rem solid rgpa(123, 173, 182, 0.25);
-  background-color: white;
-}
-
-.choice-prefix {
-  padding: 1.5rem 2.5rem;
-  background-color: #7badb6;
-  color: white;
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid #7badb6;
+    background-color: white;
 }
 
 .choice-text {
@@ -23,6 +17,12 @@
   box-shadow: 0 0.4rem 1rem 0 rgba(123, 173, 182, 0.5);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
+}
+
+.choice-prefix {
+  padding: 1.5rem 2.5rem;
+  background-color: #7badb6;
+  color: white;
 }
 
 .incorrect {
@@ -50,10 +50,10 @@
 }
 
 .episode-info {
-  width: 100%;
-  padding: 1rem 2rem;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #episodeName:hover {
@@ -89,18 +89,31 @@
   list-style: none;
 }
 
-.segment-btn {
+.segment-btn,
+#all-btn {
   font-size: 1.8rem;
   font-weight: 500;
   background-color: white;
-  border: 0.1rem solid black;
+  border: 0.1rem solid #7badb6;
   box-shadow: none;
-  color: black;
+  color: #a9431e;
   padding: 1rem;
   width: 100%;
   text-align: left;
 }
 
-.segment-btn:hover {
-  color: #a9431e;
+.segment-btn {
+    margin-top: 0.25rem;
 }
+
+#all-btn {
+    padding: 0rem;
+    border-width: 0rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.segment-btn:hover {
+    color: #a9431e;
+}
+

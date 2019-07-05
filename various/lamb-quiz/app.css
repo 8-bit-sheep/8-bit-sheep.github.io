@@ -15,13 +15,13 @@ h1,
 h2,
 h3,
 h4 {
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
 }
 
 h1 {
   font-size: 5.4rem;
   color: #a9431e;
-  margin-bottom: 5rem;
+  margin: 2.5rem 0;
 }
 
 h1 > span {
@@ -54,6 +54,7 @@ h4 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .container > * {
@@ -86,7 +87,7 @@ h4 {
 
 .btn {
   font-size: 1.8rem;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
   width: 20rem;
   text-align: center;
   border: 0.1rem solid #7badb6;
@@ -96,7 +97,8 @@ h4 {
   background-color: white;
 }
 
-.btn:hover {
+.btn:hover,
+.content-container a:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1rem 0 rgba(123, 173, 182, 0.5);
   transform: translateY(-0.1rem);
@@ -106,10 +108,6 @@ h4 {
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
-}
-.btn.wide {
-    width: 100%;
-    padding: 1rem;
 }
 
 /* forms */
@@ -134,8 +132,47 @@ input::placeholder {
   color: #888;
 }
 
-@media (min-width: 51rem) {
-  .window-column {
-    columns: 2 auto;
-  }
+.window-column {
+    columns: 1 auto;
+    width: 100%;
 }
+
+@media (min-width: 51rem) {
+    .window-column {
+        columns: 2 auto;
+        width: 100%;
+    }
+}
+
+.content-container a {
+    text-decoration: none;
+    border: 0.1rem solid rgba(123, 173, 182, 0.5);
+    padding: 0.75rem;
+    margin: 0.75rem;
+    margin-left: 0rem;
+    width: 20rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.content-container {
+    display: flex;
+    margin: 0.25rem 0;
+    width: 100%;
+    border: 0.1rem solid #7badb6;
+    background-color: white;
+}
+
+.content-container h4 {
+    padding: 1rem;
+    width: 100%;
+    color: #a9431e;
+}
+
+.btn-gamelink {
+    color: #fff;
+    background-color: #7badb6;
+}
+
+

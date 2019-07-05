@@ -47,10 +47,16 @@ const segmentSelector = () => {
   const segmentList = [
     ...new Set(questions.map(question => question.contentSegment))
   ];
+  if (segmentList.length < 2) {
+    game.classList.remove("hidden");
+    availableQuestions = [...questions];
+    segmentBox.classList.add("hidden");
+    getNewQuestion();
+  }
+  createButtonInsideListItem(document.getElementById("all-btn"), "Play All!");
   segmentList.forEach(segment =>
     createButtonInsideListItem(segmentButtons, segment)
   );
-  createButtonInsideListItem(segmentButtons, "Play All!");
 };
 
 const createButtonInsideListItem = (list, text) => {
@@ -73,10 +79,10 @@ const startSegmentGame = e => {
     isSegmentGame = true;
   }
   if (availableQuestions.length < maxQuestions) {
-      maxQuestions = availableQuestions.length;
+    maxQuestions = availableQuestions.length;
   }
-    getNewQuestion();
-    game.classList.remove("hidden");
+  getNewQuestion();
+  game.classList.remove("hidden");
   segmentBox.classList.add("hidden");
 };
 
