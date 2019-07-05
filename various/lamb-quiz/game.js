@@ -53,7 +53,7 @@ const segmentSelector = () => {
     segmentBox.classList.add("hidden");
     getNewQuestion();
   }
-  createButtonInsideListItem(document.getElementById("all-btn"), "Play All!");
+  createButtonInsideListItem(document.getElementById("all-btns"), "Play All!");
   segmentList.forEach(segment =>
     createButtonInsideListItem(segmentButtons, segment)
   );
@@ -65,8 +65,12 @@ const createButtonInsideListItem = (list, text) => {
   const button = document.createElement("button");
   li.appendChild(button);
   button.innerText = text;
-  button.classList.add("segment-btn");
-  button.addEventListener("click", startSegmentGame);
+    if(text === "Play All!") {
+        button.classList.add("all-btn");
+    } else {
+        button.classList.add("segment-btn");        
+    }
+    button.addEventListener("click", startSegmentGame);
 };
 
 const startSegmentGame = e => {

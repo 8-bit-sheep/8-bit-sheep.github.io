@@ -90,27 +90,28 @@
 }
 
 .segment-btn,
-#all-btn {
-  font-size: 1.8rem;
-  font-weight: 500;
-  background-color: white;
-  border: 0.1rem solid #7badb6;
-  box-shadow: none;
-  color: #a9431e;
-  padding: 1rem;
-  width: 100%;
-  text-align: left;
+.all-btn {
+    font-size: 1.8rem;
+    font-weight: 500;
+    background-color: white;
+    border: 0.1rem solid #7badb6;
+    box-shadow: none;
+    color: #a9431e;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
 }
 
 .segment-btn {
     margin-top: 0.25rem;
 }
 
-#all-btn {
+#all-btns {
     padding: 0rem;
     border-width: 0rem;
     list-style: none;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .segment-btn:hover {
