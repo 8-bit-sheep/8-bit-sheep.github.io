@@ -154,6 +154,8 @@ input::placeholder {
     text-align: center;
     font-size: 1.4rem;
     color: #fff;
+    background-color: #7badb6;
+
 }
 
 .content-container {
@@ -170,9 +172,14 @@ input::placeholder {
     color: #a9431e;
 }
 
-.btn-gamelink {
-    color: #fff;
-    background-color: #7badb6;
+.btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    height: 100%;
+    
 }
 
 

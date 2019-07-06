@@ -27,21 +27,27 @@ const createLinkBtn = (text, id) => {
   const div = document.createElement("div");
   contentBox.appendChild(div);
   const h4 = document.createElement("h4");
-  div.appendChild(h4);
-  h4.innerText = text;
-  const gameLink = document.createElement("a");
+    div.appendChild(h4);
+    h4.innerText = text;
+    const gameLink = document.createElement("a");
     div.appendChild(gameLink);
-    gameLink.classList.add("btn-gamelink");
-    gameLink.innerText = "Play!";
+    const buttonText = document.createElement("p")
+    gameLink.appendChild(buttonText)
+    buttonText.classList.add("btn-link");
+    buttonText.innerText = "Play!";
     const gameHref = document.createAttribute("href");
     gameLink.setAttributeNode(gameHref);
   gameHref.value = "game.html?contentId=" + id;
     const highScoreLink = document.createElement("a");
-    highScoreLink.classList.add("btn-gamelink");
+    //highScoreLink.classList.add("btn-gamelink");
     div.appendChild(highScoreLink);
+    const hsbuttonText = document.createElement("p")
+    highScoreLink.appendChild(hsbuttonText)
+    hsbuttonText.classList.add("btn-link");
+
     const highScoreHref = document.createAttribute("href");
-  highScoreHref.value = "highscores.html?contentId=" + id;
+    highScoreHref.value = "highscores.html?contentId=" + id;
   highScoreLink.setAttributeNode(highScoreHref);
   div.classList.add("content-container");
-  highScoreLink.innerText = "High Scores";
+    hsbuttonText.innerText = "High Scores";
 };
