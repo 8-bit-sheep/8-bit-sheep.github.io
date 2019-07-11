@@ -1,89 +1,188 @@
+// dom references
+
+const loader = document.getElementById("loader");
+const game = document.getElementById("game");
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById("questionCounter");
 const scoreText = document.getElementById("score");
-const source = document.getElementById("source");
-const section = document.getElementById("section");
+const episodeNameText = document.getElementById("episodeName");
+const contentNameText = document.getElementById("contentName");
+const urlNameText = document.getElementById("episodeurl");
+const id = window.location.search.split("=")[1];
+const segmentBox = document.getElementById("segment-index");
+const segmentButtons = document.getElementById("segment-buttons");
+
 // state
-let currentQuestion = {};
+let currentQuestion = {};       // 
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let questions = []; // new
+let questions = [];
+let cont = false;
+let maxQuestions = 20;
+let isSegmentGame = false;
 
-
+// configuration
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
 
 const startGame = () => {
     questionCounter = 0;
     score = 0;
+    scoreText.innerText = score;
+    loader.classList.add("hidden");
+    if (id === "0") {
+        game.classList.remove("hidden");
+        availableQuestions = [...questions];
+        maxQuestions = 50;
+        getNewQuestion();
+    } else {
+        segmentBox.classList.remove("hidden");
+        segmentSelector();
+    }
+};
+
+const segmentSelector = () => {
+  const segmentList = [
+    ...new Set(questions.map(question => question.contentSegment))
+  ];
+  if (segmentList.length < 2) {
+    game.classList.remove("hidden");
     availableQuestions = [...questions];
+    segmentBox.classList.add("hidden");
     getNewQuestion();
-}
+  }
+  createButtonInsideListItem(document.getElementById("all-btns"), "Play All!");
+  segmentList.forEach(segment =>
+    createButtonInsideListItem(segmentButtons, segment)
+  );
+};
+
+const createButtonInsideListItem = (list, text) => {
+  const li = document.createElement("li");
+  list.appendChild(li);
+  const button = document.createElement("button");
+  li.appendChild(button);
+  button.innerText = text;
+    if(text === "Play All!") {
+        button.classList.add("all-btn");
+    } else {
+        button.classList.add("segment-btn");        
+    }
+    button.addEventListener("click", startSegmentGame);
+};
+
+const startSegmentGame = e => {
+  if (e.target.innerText === "Play All!") {
+    availableQuestions = [...questions];
+  } else {
+    availableQuestions = questions.filter(
+      question => question.contentSegment === e.target.innerText
+    );
+    isSegmentGame = true;
+  }
+  if (availableQuestions.length < maxQuestions) {
+    maxQuestions = availableQuestions.length;
+  }
+  getNewQuestion();
+  game.classList.remove("hidden");
+  segmentBox.classList.add("hidden");
+};
+
+
 
 const getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS - 1) return window.location.assign("end.html"); // -1
-        
-        
-    questionCounter++;
-    questionCounterText.innerText = 
-        questionCounter + "/" + MAX_QUESTIONS;
-    
+    cont = false;
+    if (availableQuestions.length === 0 || questionCounter > maxQuestions - 1) {
+        localStorage.setItem("mostRecentScore", score);
+        if (isSegmentGame === false) {
+            return window.location.assign("end.html?contentId=" + id + "&all=1");
+        } else {
+            return window.location.assign("end.html?contentId=" + id);
+        }
+    }
 
+    questionCounter++;
+    questionCounterText.innerText = questionCounter + "/" + maxQuestions;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
+    episodeNameText.innerText = currentQuestion.contentSegment;
+    contentNameText.innerText = currentQuestion.content;
     question.innerText = currentQuestion.question;
-    source.getElementsByTagName("a")[0].setAttribute("href", currentQuestion.url);
-    source.getElementsByTagName("a")[0].innerText = currentQuestion.course;
-    section.getElementsByTagName("a")[0].setAttribute("href", currentQuestion.url);
-    section.getElementsByTagName("a")[0].innerText = currentQuestion.episode;
+    urlNameText.href = currentQuestion.url;
+    const r = [1,2,3,4]
     choices.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number]; 
-    })
+        const curNum = r.splice(Math.floor(Math.random() * r.length), 1);
+        choice.dataset["number"] = curNum;
+        choice.innerText = currentQuestion["choice" + curNum];
+    });
+
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
-}
+};
 
+const wrongAnswer = () => {
+    setTimeout(() => {
+        choices.forEach(choice => {
+            if (choice.dataset["number"] === currentQuestion.answer) {
+                choice.parentElement.classList.add("correct");
+            }
+        });
+        cont = true;
+    }, 200);
+};
+
+const continueGame = () => {
+    if (cont) {
+        choices.forEach(choice => {
+            choice.parentElement.classList.remove(["incorrect"]);
+            choice.parentElement.classList.remove(["correct"]);
+        });
+        getNewQuestion();
+    } else return;
+};
+
+document.body.addEventListener("click", e => continueGame());
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
-        if(!acceptingAnswers) return;
-        acceptingAnswers = false;
+        if (!acceptingAnswers | cont) return;
+        acceptinganswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
+        const classToApply =
+              selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
 
-        const classToApply = (selectedAnswer === currentQuestion.answer)? "correct" : "incorrect";
-
-        if(classToApply === "correct") {
+        if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
         }
-
         selectedChoice.parentElement.classList.add(classToApply);
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
-        }, 500);
-
-    })
-})
+        if (classToApply === "correct") {
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(classToApply);
+                getNewQuestion();
+            }, 500);
+        } else {
+            acceptingAnswers = false;
+            wrongAnswer();
+        }
+    });
+});
 
 const incrementScore = num => {
     score += num;
     scoreText.innerText = score;
-}
+};
 
+d3.csv(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBFGoYTqluPD2bPBFrrSCxkC-5F9GmrFcE2ZAeTdO3VCaBLbxDsU88lxbLmI1AIE4p-iGqy1t5fFCl/pub?output=csv"
 
-d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQBFGoYTqluPD2bPBFrrSCxkC-5F9GmrFcE2ZAeTdO3VCaBLbxDsU88lxbLmI1AIE4p-iGqy1t5fFCl/pub?output=csv")
-    .then(function(data) {
-        questions = data;
-        startGame(); // this was moved here
-
-    })
-    .catch(function(error){
-        console.log(error)
-    })
-
+).then(data => {
+    questions = data.filter(question => {
+        if (id === "0") return true;
+        else return question.contentId === id;
+    });
+    startGame();
+});
