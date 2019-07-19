@@ -17,19 +17,16 @@ d3.csv(
       .map(y => y.score)
       .filter(x => x === params.score)
       .length;
-    if (exists === 0) ranking.push(params);
-    ranking = ranking.sort((a, b) => parseInt(b.score) > parseInt(a.score)).slice(0,10);
-    const highscoreList = document.getElementById("highscoreList");
-    let contentName = document.getElementById("contentName");
+      if (exists === 0 & params.name) ranking.push(params);
+      ranking = ranking.sort((a, b) => parseInt(b.score) > parseInt(a.score)).slice(0,10);
+      const highscoreList = document.getElementById("highscoreList");
+      let contentName = document.getElementById("contentName");
 
-    highscoreList.innerHTML = ranking
+      highscoreList.innerHTML = ranking
       .map(
         row =>
-          `<tr>
-    <th class="highscoreNames">${row.name.substring(
-            0,
-            16
-          )}</th><th class="highscoreScores">${row.score}</th></tr>`
+              `<tr>
+    <th class="highscoreNames">${row.name}</th><th class="highscoreScores">${row.score}</th></tr>`
       )
       .join("");
 
@@ -43,7 +40,7 @@ d3.csv(
             names.filter(x => x.contentId === id)[0].content :
             "All";
 
-          contentName.innerText = contentNames;
+            contentName.innerText = contentNames;
         }
       )
 

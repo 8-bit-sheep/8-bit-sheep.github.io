@@ -4,6 +4,7 @@ let questions = [];
 d3.csv(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBFGoYTqluPD2bPBFrrSCxkC-5F9GmrFcE2ZAeTdO3VCaBLbxDsU88lxbLmI1AIE4p-iGqy1t5fFCl/pub?output=csv"
 ).then(data => {
+    console.log(data);
     getData(data);
 });
 const contentTitles = [
