@@ -16,15 +16,15 @@ const segmentButtons = document.getElementById("segment-buttons");
 // state
 let currentQuestion = {};
 let acceptingAnswers = false;
+let continueToNext = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
-let cont = false;
 let maxQuestions = 20;
 let isSegmentGame = false;
 
-// state
+// config
 const CORRECT_BONUS = 10;
 
 const startGame = () => {
@@ -65,12 +65,12 @@ const createButtonInsideListItem = (list, text) => {
   const button = document.createElement("button");
   li.appendChild(button);
   button.innerText = text;
-    if(text === "Play All!") {
-        button.classList.add("all-btn");
-    } else {
-        button.classList.add("segment-btn");        
-    }
-    button.addEventListener("click", startSegmentGame);
+  if (text === "Play All!") {
+    button.classList.add("all-btn");
+  } else {
+    button.classList.add("segment-btn");
+  }
+  button.addEventListener("click", startSegmentGame);
 };
 
 const startSegmentGame = e => {
@@ -91,7 +91,7 @@ const startSegmentGame = e => {
 };
 
 const getNewQuestion = () => {
-  cont = false;
+  continueToNext = false;
   if (availableQuestions.length === 0 || questionCounter > maxQuestions - 1) {
     localStorage.setItem("mostRecentScore", score);
     if (isSegmentGame === false) {
@@ -125,12 +125,12 @@ const wrongAnswer = () => {
         choice.parentElement.classList.add("correct");
       }
     });
-    cont = true;
+    continueToNext = true;
   }, 200);
 };
 
 const continueGame = () => {
-  if (cont) {
+  if (continueToNext) {
     choices.forEach(choice => {
       choice.parentElement.classList.remove(["incorrect"]);
       choice.parentElement.classList.remove(["correct"]);
@@ -139,33 +139,63 @@ const continueGame = () => {
   } else return;
 };
 
+checkChoice = (selectedAnswer, selectedChoice) => {
+  const classToApply =
+    selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
+
+  if (classToApply === "correct") {
+    incrementScore(CORRECT_BONUS);
+  }
+  selectedChoice.parentElement.classList.add(classToApply);
+
+  if (classToApply === "correct") {
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 500);
+  } else {
+    acceptingAnswers = false;
+    wrongAnswer();
+  }
+}
+
+const keyboardMap = {
+  49: "1",
+  50: "2",
+  51: "3",
+  52: "4"
+}
+
+const keypress = kp => {
+  if (!acceptingAnswers | continueToNext) {
+    continueGame();
+  } else {
+    choices.forEach(choice => {
+      if (choice.dataset["number"] === keyboardMap[kp]) {
+        selectedChoice = choice;
+      }
+    });
+  
+    console.log(keyboardMap[kp])
+    checkChoice(keyboardMap[kp], selectedChoice)  
+  }
+}
+
+document.onkeyup = (e => keypress(e.which))
+
 document.body.addEventListener("click", e => continueGame());
 
 choices.forEach(choice => {
   choice.addEventListener("click", e => {
-    if (!acceptingAnswers | cont) return;
+    if (!acceptingAnswers | continueToNext) return;
     acceptinganswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    const classToApply =
-      selectedAnswer === currentQuestion.answer ? "correct" : "incorrect";
-
-    if (classToApply === "correct") {
-      incrementScore(CORRECT_BONUS);
-    }
-    selectedChoice.parentElement.classList.add(classToApply);
-
-    if (classToApply === "correct") {
-      setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        getNewQuestion();
-      }, 500);
-    } else {
-      acceptingAnswers = false;
-      wrongAnswer();
-    }
+    AA(selectedAnswer, selectedChoice);
   });
 });
+
+
 
 const incrementScore = num => {
   score += num;
@@ -173,7 +203,7 @@ const incrementScore = num => {
 };
 
 d3.csv(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfBk-rwrIauBPn7iuoLXBxP2sSYOXRYCbJ2GflzSK6wxGVGDr_fAqORJ0JWPdajFLxnGegmrlI26HB/pub?output=csv"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBFGoYTqluPD2bPBFrrSCxkC-5F9GmrFcE2ZAeTdO3VCaBLbxDsU88lxbLmI1AIE4p-iGqy1t5fFCl/pub?output=csv"
 ).then(data => {
     questions = data.filter(question => {
     if (id === "0") return true;
