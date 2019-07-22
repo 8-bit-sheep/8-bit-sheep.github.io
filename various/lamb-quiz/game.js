@@ -190,8 +190,8 @@ choices.forEach(choice => {
     if (!acceptingAnswers | continueToNext) return;
     acceptinganswers = false;
     const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
-    AA(selectedAnswer, selectedChoice);
+      const selectedAnswer = selectedChoice.dataset["number"];
+      checkChoice(selectedAnswer, selectedChoice);
   });
 });
 
