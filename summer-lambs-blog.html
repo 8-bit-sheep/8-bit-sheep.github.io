@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-08-31 Sat 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Summer Lambs Project</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Sami Kallinen, contributions by Jaakko Ojalehto" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./8bs-blog.css"/>
+<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
+<link rel="stylesheet" type="text/css" href="./8bs-blog.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Summer Lambs Project</h1>
+
+<div id="outline-container-orgf43c7e5" class="outline-2">
+<h2 id="orgf43c7e5"><b>How we offered teenagers a summer job and taught them to code</b></h2>
+<div class="outline-text-2" id="text-orgf43c7e5">
+</div>
+<div id="outline-container-orge808a61" class="outline-3">
+<h3 id="orge808a61"><b>— A recursive dogfooding story</b></h3>
+<div class="outline-text-3" id="text-orge808a61">
+<p>
+<div class="video-container"><iframe width="940" height="557" src="https://www.youtube.com/embed/AvxUjVJ_vEg" frameborder="0" allowfullscreen></iframe></div>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ecc26d" class="outline-3">
+<h3 id="org8ecc26d"><b>Spaced Repetition with The Summer Lambs</b></h3>
+<div class="outline-text-3" id="text-org8ecc26d">
+<p>
+This summer we organized a lovely experiment, the Summer lambs project, where we offered a handful of teenagers the opportunity to get some work experience within tech and to offer them an opportunity to learn to code.
+</p>
+
+<p>
+We ended up using a pattern that could be described as dogfooding mixed with a recursive learning loop. It turned out to work wonderfully and meant that the high schoolers programmed an actual real world application but also learned about ideas in programming and computer science through dogfooding the same app that they were programming.
+</p>
+
+<p>
+The product they built is a quiz app that is meant to help people trying to learn through spaced repetition. The larger vision for the product was that they would build something during the six weeks that could become a wikipedia of quizzes; a service where all the source materials of the world such as books, videos and lectures could be found in a quiz form. When you read a chapter from a book, you will learn the content by practising with the quiz app, and by returning to the app until you have properly digested it.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org140631a" class="outline-3">
+<h3 id="org140631a"><b>Crash Course Computer Science</b></h3>
+<div class="outline-text-3" id="text-org140631a">
+<p>
+For most of the days during the six weeks that the kids, or the "lambs", were working, they would watch one or two videos in the mornings. Then they would generate about 20 questions for each video. Every day they would watch a new episode of the absolutely brilliant Crash Course Computer Science series. Sometimes they would also watch some more hands on videos and tutorials related to programming.
+</p>
+
+<p>
+The <a href="https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a">Crash Course Computer Science</a> is a fantastic resource. We had already been using it at home with my kids during the past year as a fun way to learn computer science. We used to watch the videos togheter, collect insights on sticky notes. Then we would post them on a wall and return to them, often while brushing our teeth, to review and discuss them regularly. This experience was also one of the inspirations that led to the Summer Lambs Project. 
+</p>
+
+<p>
+The series consists of short 10+ minute youtube videos packed with information. It is designed very well and the manner in which the host <a href="https://twitter.com/missphilbin">Carrie Ann Philbin @MissPhilbin</a> explains computer science with wonderful clarity yet at some considerable depth, making it both fun and inspiring. The series basically covers what, say, a first year computer science student would learn at university, albeit in a much more enjoyable way.
+</p>
+
+<p>
+Before watching the videos and generating content for them, the lambs would actually start each day by doing 50 random questions from the quiz. This was a natural way to assist them in their learning. Moreover, it was a good lesson in the merits of dogfooding while developing digital services.
+</p>
+
+
+<div class="figure">
+<p><img src="./lamb1.jpg" alt="lamb1.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2e7ea6a" class="outline-3">
+<h3 id="org2e7ea6a"><b>Teaching highschoolers to code in 6 weeks</b></h3>
+<div class="outline-text-3" id="text-org2e7ea6a">
+<p>
+The rest of the day was spent programming. We decided to throw them in at the deep end right from the start. They started coding on the very first day. Of course this actually meant they were mostly copying code that was presented to them. At the start we were following a JavaScript <a href="https://www.youtube.com/watch?v=u98ROZjBWy8">tutorial</a> by James Q Quick where a simple quiz app is built. This was a perfect way to quickly get started and see some tangible results.
+</p>
+
+<p>
+In terms of language we chose JavaScript. Yeah, we know. Not perhaps our favorite languages in every sense nor the best. Clojure/ClojureScript, PureScript or even TypeScript comes to mind as something that might have been preferred. Nor is JS maybe the best choice in terms of teaching programming. Many schools and universities seem to opt for Python these days. 
+</p>
+
+<p>
+According to the <a href="https://insights.stackoverflow.com/survey/2019">StackOverflow 2019 survey</a>, as many of you are no doubt are aware, JavaScript is the most popular programming language — as it has been for seven years in a row now. JS has pwned the web stack. We saw this popularity as an important consideration as it increases the utility of the language. The number of resources out there that can help your learning journey are limitless as well as is the general ecosystem that can be taken advantage of to solve almost any problem at hand.
+</p>
+
+<p>
+Perhaps an even more important rationale behind the choice is  the tooling, which can be straight forward, particularily if you are writing vanilla ES6 for the frontend. It does not require the compiling steps which increases the distance between coding and seeing the results of that code, which helps the beginner experience. 
+</p>
+
+<p>
+Also the "replesque" experience that the console provides is an asset. It might not be a real repl nor a great as repl experiences go, but it does help learners tremendously to do step by step iteration, data exploration, experimentation and help overall easier debugging. The lambs learned very quickly to do experiments in the console when they did not understand something. Furthermore, as ES6 is now supported in the modern browser, this also helped to make this case.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org186c820" class="outline-3">
+<h3 id="org186c820"><b>Google Drive as backend</b></h3>
+<div class="outline-text-3" id="text-org186c820">
+<p>
+Another important decision was that we chose to focus exclusively on the front end to limit the complexity of the systems that the lambs would have to grok. As consequence we ended up using Google Spreadsheets as the backend! It is easy to manually input data manually to a sheet, while they were creating content for the quiz, and it is also fairly trivial to retrieve data from there.
+</p>
+
+<p>
+The quiz content was therefore entered into a Google Sheet and stored there. The lambs also developed a feature where users can submit feedback on how to improve a particular question and these are collected into another sheet. Another similar implementation was the feature where the users are asked to contribute a question of their own to the platform in order to offer the users the option to do some active learning. 
+</p>
+
+<p>
+The highscore functionality is slightly more complex as there is some latency after a submission before an updated row can be retrieved through the Google Sheets CSV-api. This led to some hacks in the app, but this case also highlighted to the learners why backends are needed and what kind of basic security concerns need to be solved. In the current implementation anyone can rather trivially just inject any highscore with any nickname into the sheet. Still, it made a lot of sense to try to limit the scope of the project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c87c10" class="outline-3">
+<h3 id="org0c87c10"><b>Also version control and mob coding</b></h3>
+<div class="outline-text-3" id="text-org0c87c10">
+<p>
+The lambs also learned stuff like version control, ie. command line Git, GitHub and pull requests. They were also introduced to the basics of some agile patterns and thinking. We especially made sure to do frequent retro's which the kids seemed to find useful and enjoy. Pair coding as well as mob coding was also something they were taught. 
+</p>
+
+<p>
+Even though we did invest and "donate" a considerable amount of our own time to this project, we did also try to get the kids to do as much p2p learning as possible. Mob coding was used especially in the beginning as it helps complete novice learners not to get stuck as often, as they through mob coding got to "pool" their knowledge and solve problems as a group. When they got a bit further in their learning journey they started to focus much more on pair coding. It demands a bit more from each participant and it also worked very well.
+</p>
+
+
+<div class="figure">
+<p><img src="./lambs2.JPG" alt="lambs2.JPG" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf00560" class="outline-3">
+<h3 id="orgdf00560"><b>The experience of teaching from scratch</b></h3>
+<div class="outline-text-3" id="text-orgdf00560">
+<p>
+The experience of teaching someone who is starting from scratch was an enourmously difficult but also fascinating and gratifying experience.
+</p>
+
+<p>
+Something that struck us as especially interesting was how important it is to carefully choose what not to teach. This might even be more difficult than, indeed, to choose what to teach. There are so many layers of abstractions even in a simple front end JS app and as us humans only can keep a handful of concepts in our minds at once, it is easy to overload the learner with too many things. Just to keep track of simple programming fundamentals and the system ie. how the browser, html, css, javascript and the dom interact and are related to each other is not an easy task for any beginner. 
+</p>
+
+<p>
+You have to be careful to only introduce one idea at a time, even though we chose to break this rule at the beginning and did jump right in at the outset. Seeing the effect of the code you are writing is necessary to build motivation.
+</p>
+
+<p>
+Another wonderfully gratifying experience was to see how the mechanics of repetition work in learning. It is not very surprising, but to see it unfold in front of your eyes was super fascinating. 
+</p>
+
+<p>
+For instance, to learn how the map function works takes careful repetition multiple times until it sticks. Or take the git commands. We repeated the same steps every day for about a week until they stuck. I'm not entirely sure we appreciate the mechanics of this when we go about our business ordinarily. We communicate and think people remember and understand. Usually they don't. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9261873" class="outline-3">
+<h3 id="org9261873"><b>Fantastic Kids</b></h3>
+<div class="outline-text-3" id="text-org9261873">
+<p>
+It needs to be said that the kids were amazingly bright and fast learners. It was such a pleasure to work with them. There were many moments when we were taken aback when realizing how they had figured out how to do something very advanced that had hardly been mentioned. 
+</p>
+
+<p>
+We are extremely happy and proud with what the lambs managed to learn and produce in such a short time. We are also grateful for the opportunity to learn ourselves. You can get a glimpse of how amazing these kids are in the video above.
+</p>
+
+<p>
+We also want to stress our gratitude to our partner, the Smart Data and Audience Insight team at Yle, The Finnish Broadcasting Corporation and Eija Moisala there who got excited by the idea and at very short notice decided to join the project and sponsor two of the lambs. 
+</p>
+
+<p>
+Of course the project would not had been possible without the work of people like Carrie-Ann Philby and the team who did the Crash Course Computer Science series as well as the Green Brothers offering the Crash Course concept and content to the universe. Also a big hand to James Q Quick and Brad Traversy at <a href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA">Traversy Media</a> who have created some great tutorials for learners of programming, which we enjoyed during our adventure.
+</p>
+
+<p>
+You can try out the quiz app at <a href="https://8-bit-sheep.com/various/lamb-quiz/index.html">https://8-bit-sheep.com/various/lamb-quiz/index.html</a>! As the lambs put it "It's not ready and will probably never be ready, but it works!"
+</p>
+
+<p>
+The planning, production of the project and the teaching was mostly done by yours truly, but rest of the sheep at 8-bit-sheep are owed gratitude for their help and efforts. A special shoutout to Jaakko Ojalehto for supervising and expertly teaching the lambs for some of the summer.
+</p>
+
+
+
+<div class="figure">
+<p><img src="sheep-logo.gif" alt="sheep-logo.gif" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Sami Kallinen, contributions by Jaakko Ojalehto</p>
+<p class="date">Created: 2019-08-31 Sat 21:08</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
