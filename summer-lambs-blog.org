@@ -24,7 +24,7 @@
 [[yt:AvxUjVJ_vEg]]
 
 ** *Spaced Repetition with The Summer Lambs*
-This summer we organized a lovely experiment, the Summer lambs project, where we offered a handful of teenagers the opportunity to get some work experience within tech and to offer them the chance to learn to code. We were curious whether someone could learn to program in just six weeks.
+This summer we organized a lovely experiment, the Summer lambs project, where we offered a handful of teenagers the opportunity to get some work experience within tech and the chance to learn to code. We were curious whether someone could learn to program in just six weeks.
 
 We ended up using a pattern that could be described as dogfooding mixed with a recursive learning loop. It turned out to work wonderfully and meant that the high schoolers coded an actual real-world application but also learned about ideas in programming and computer science through dogfooding the same app that they were programming.
 
