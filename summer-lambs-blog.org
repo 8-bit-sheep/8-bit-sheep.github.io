@@ -42,7 +42,7 @@ Before watching the videos and generating new questions, the lambs would actuall
   
 [[./lamb1.jpg]]
 
-** *Teaching highschoolers to code in 6 weeks*
+** *Teaching high schoolers to code in 6 weeks*
 The rest of the day was spent programming. We decided to throw them in at the deep end right from the start. They started coding on the very first day. Of course this actually meant they were mostly copying code that was presented to them. At the start we were following a JavaScript [[https://www.youtube.com/watch?v=u98ROZjBWy8][tutorial]] by James Q Quick where a simple quiz app is built. This was a perfect way to quickly get started and see some tangible results.
 
 In terms of language we chose JavaScript. Yeah, we know. Not perhaps our favorite languages in every sense nor the best. Clojure/ClojureScript, PureScript or even TypeScript comes to mind as something that might have been preferred. Nor is JS maybe the best choice in terms of teaching programming. Many schools and universities seem to opt for Python these days. 
