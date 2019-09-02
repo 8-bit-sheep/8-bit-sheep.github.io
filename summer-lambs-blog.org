@@ -6,6 +6,20 @@
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">  
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./8bs-blog.css"/>
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./8bs-blog.css"/>
+#+HTML_HEAD_EXTRA:     <!-- Global site tag (gtag.js) - Google Analytics -->
+#+HTML_HEAD_EXTRA:     <script
+#+HTML_HEAD_EXTRA:       async
+#+HTML_HEAD_EXTRA:       src="https://www.googletagmanager.com/gtag/js?id=UA-145050363-1"
+#+HTML_HEAD_EXTRA:     ></script>
+#+HTML_HEAD_EXTRA:     <script>
+#+HTML_HEAD_EXTRA:       window.dataLayer = window.dataLayer || [];
+#+HTML_HEAD_EXTRA:       function gtag() {
+#+HTML_HEAD_EXTRA:         dataLayer.push(arguments);
+#+HTML_HEAD_EXTRA:       }
+#+HTML_HEAD_EXTRA:       gtag("js", new Date());
+#+HTML_HEAD_EXTRA: 
+#+HTML_HEAD_EXTRA:       gtag("config", "UA-145050363-1");
+#+HTML_HEAD_EXTRA:     </script>
 
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
