@@ -104,7 +104,7 @@ Also the "replesque" experience that the JS console provides is an asset. It mig
 
 And did they learn to programme in six weeks? Like they also express in the video, no, but then again learning to program is never finished. But they did get a great start that helps them to continue the life long journey if they would choose to.
 
- We want to stress our gratitude to our partner, the Smart Data and Audience Insight team at Yle, The Finnish Broadcasting Corporation and Eija Moisala there who got excited by the idea and at very short notice decided to join the project and sponsor two of the lambs. 
+ We want to stress our gratitude to our partner, the Smart Data and Audience Insight team at Yle, The Finnish Broadcasting Company and Eija Moisala there who got excited by the idea and at very short notice decided to join the project and sponsor two of the lambs. 
 
  Of course, the project would not have been possible without the work of people like Carrie-Ann Philby and the team who produced the Crash Course Computer Science series not to mention the Green Brothers ([[https://twitter.com/johngreen][@johngreen]] and [[https://twitter.com/hankgreen][@hankgreen]]) offering the Crash Course concept and content to the universe. Also, a big hand to James Q Quick and Brad Traversy at [[https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA][Traversy Media]] who have created some great tutorials for learners of programming, which we enjoyed during our adventure.
 
