@@ -79,7 +79,7 @@ Also the "replesque" experience that the JS console provides is an asset. It mig
   
 ** *Also version control and mob coding*
 
- The lambs also learned stuff like version control, ie. command-line Git, GitHub and pull requests. They were also introduced to the basics of some agile patterns and thinking. We especially made sure to do frequent retro's which the kids seemed to find useful and enjoy. Pair coding, as well as mob coding, was also something they were used and taught. 
+ The lambs also learned stuff like version control, ie. command-line Git, GitHub and pull requests. They were also introduced to the basics of some agile patterns and thinking. We especially made sure to do frequent retros which the kids seemed to find useful and enjoy. Pair coding, as well as mob coding, was also something they were used and taught. 
 
  Even though we did invest and "donate" a considerable amount of our own time to this project, we did also try to get the kids to do as much p2p learning as possible. Mob coding is a great tool for that and was used especially in the beginning. It helps complete novice learners not to get stuck as often, as they through mob coding get to "pool" their knowledge and solve problems as a group. When they got a bit further in their learning journey they started to focus much more on pair coding. It demands a bit more from each participant which is good.
   
