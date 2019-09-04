@@ -53,8 +53,8 @@ const OPEN_PROBABILITY = 0.5;
 
 const startGame = () => {
     //if (!contributed && contentId !== "0")
-        //window.location.assign("user-questions.html?contentId=" + contentId);
-        questionCounter = 0;
+    //window.location.assign("user-questions.html?contentId=" + contentId);
+    questionCounter = 0;
     score = 0;
     scoreText.innerText = score;
     loader.classList.add("hidden");
@@ -63,10 +63,10 @@ const startGame = () => {
         availableQuestions = [...questions];
         maxQuestions = 50;
         getNewQuestion();
-    } else if (contributed) {
+        //} else if (contributed) {
         segmentBox.classList.remove("hidden");
         segmentSelector();
-    }
+    //}
 };
 
 const segmentSelector = () => {
