@@ -52,9 +52,9 @@ const CORRECT_BONUS = 10;
 const OPEN_PROBABILITY = 0.5;
 
 const startGame = () => {
-  if (!contributed && contentId !== "0")
-      //window.location.assign("user-questions.html?contentId=" + contentId);
-    questionCounter = 0;
+    //if (!contributed && contentId !== "0")
+        //window.location.assign("user-questions.html?contentId=" + contentId);
+        questionCounter = 0;
     score = 0;
     scoreText.innerText = score;
     loader.classList.add("hidden");
