@@ -6,23 +6,6 @@
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">  
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="./8bs.css"/>
-#+HTML_HEAD_EXTRA:<!-- Facebook Pixel Code -->
-#+HTML_HEAD_EXTRA:<script>
-#+HTML_HEAD_EXTRA:  !function(f,b,e,v,n,t,s)
-#+HTML_HEAD_EXTRA:  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-#+HTML_HEAD_EXTRA:  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-#+HTML_HEAD_EXTRA:  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-#+HTML_HEAD_EXTRA:  n.queue=[];t=b.createElement(e);t.async=!0;
-#+HTML_HEAD_EXTRA:  t.src=v;s=b.getElementsByTagName(e)[0];
-#+HTML_HEAD_EXTRA:  s.parentNode.insertBefore(t,s)}(window, document,'script',
-#+HTML_HEAD_EXTRA:  'https://connect.facebook.net/en_US/fbevents.js');
-#+HTML_HEAD_EXTRA:  fbq('init', '291078358313730');
-#+HTML_HEAD_EXTRA:  fbq('track', 'PageView');
-#+HTML_HEAD_EXTRA:</script>
-#+HTML_HEAD_EXTRA:<noscript><img height="1" width="1" style="display:none"
-#+HTML_HEAD_EXTRA:  src="https://www.facebook.com/tr?id=291078358313730&ev=PageView&noscript=1"
-#+HTML_HEAD_EXTRA:/></noscript>
-#+HTML_HEAD_EXTRA:<!-- End Facebook Pixel Code -->
 
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
