@@ -121,11 +121,6 @@ Say hi to our shepherds! Say baa to the board of 8-bit-sheep! The board is a won
 
 * 
 
-#+BEGIN_CENTER
-
-#+HTML: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS13kNT1Zwq6hz9cE7B4_87E1uAKzFu23G0PW-EXWw8CYXqfBYIOuzgjSKOBd4RFjZuc6dtB8gm80i1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="285" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-#+END_CENTER
   
 * “I’m a humanist that dreams of 8-bit sheep.”
 That’s how Sami Kallinen, the founder of 8-bit-sheep, introduced himself on Twitter for many years. The company name refers to Philip K. Dick’s classic sci-fi novel Do Androids Dream of Electric Sheep and the necessary combination of arts and technology.
