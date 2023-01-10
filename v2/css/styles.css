@@ -24,7 +24,7 @@ section {
 }
 
 .header, .footer {
-	background: #EEE7E1;
+	background: #000000;
 	display: block;
 	text-align: center;
 	padding-bottom: 40px;
@@ -32,11 +32,11 @@ section {
 }
 
 .header .title, .footer .title {
-	background: #EEE7E1;
+	background: #000000;
 	font-family: 'Helvetica';
 	font-size: 4.6vmax;
 	font-weight: bold;
-	color: #000000;
+	color: #ffffff;
 	line-height: 1.1;
 	display: block;
 	padding: 40px 40px 10px 40px;
@@ -72,8 +72,8 @@ section {
 }
 
 .contact-details a, .contact-details a:visited {
-	color: #ffffff;
-	background: #000000;
+	color: #000000;
+	background: #ffffff;
 	text-decoration: none;
 }
 
