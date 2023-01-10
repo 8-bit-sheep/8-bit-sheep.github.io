@@ -40,7 +40,7 @@ section {
 	line-height: 1.1;
 	display: block;
 	padding: 40px 40px 10px 40px;
-	text-align: center;
+	text-align: left;
 }
 
 .contact-details {
@@ -51,6 +51,8 @@ section {
 	line-height: 1.1;
 	font-weight: normal;
 	margin-top: -10px;
+	padding: 0 40px;
+	text-align: left;
 }
 /*
 .contact-details a, .contact-details a:visited {
@@ -88,7 +90,7 @@ section {
 .logo img {
 	width: 50%;
 	max-width: 280px;
-	margin-top: 40px;
+	margin: 40px 0;
 }
 
 .content-box {
@@ -164,11 +166,11 @@ h1, .desc {
 	line-height: 1.1;
 	font-weight: bold;
 }
-/*
+
 .sheep {
 	text-align: center;
 }
-*/
+
 .sheep img {
 	width: 100%;
 	max-width: 600px;
@@ -250,6 +252,10 @@ a:hover {
 
 	.content-box {
 		padding: 60px;
+	}
+	
+	.contact-details {
+		padding: 0 60px;
 	}
 
 }
