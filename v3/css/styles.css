@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/HelveticaNeue-Medium.eot');
+    src: url('../fonts/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+         url('../fonts/HelveticaNeue-Medium.woff') format('woff'),
+         url('../fonts/HelveticaNeue-Medium.ttf') format('truetype'),
+         url('../fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/HelveticaNeue-Bold.eot');
+    src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+         url('../fonts/HelveticaNeue-Bold.woff') format('woff'),
+         url('../fonts/HelveticaNeue-Bold.ttf') format('truetype'),
+         url('../fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -274,31 +298,63 @@ a:hover {
 	font-size: 4.0vmax;
 }
 
+#typewriterjs-app .lambda {
+	display: block;
+	margin-top: -0.8em;
+	//font-size: 4.0vmax;
+}
+
 #typewriterjs-app .lowPosition {
 	display: block;
-	margin-top: -0.65em;
+	margin-top: -0.9em;
 	font-size: 4.0vmax;
 }
 
 #typewriterjs-app .customLine {
 	display: block;
-	margin-top: -1.6em;
+	margin-top: -1.45em;
 }
 
 #typewriterjs-app .customLine2 {
 	display: block;
+	margin-top: -1.6em;
+}
+
+#typewriterjs-app .customLine3 {
+	display: block;
 	margin-top: 0.2em;
 }
 
+#typewriterjs-app .customLine3 img {
+	width: 100%;
+	max-width: 20px;
+	padding: 20px 0;
+}
+
 #typewriterjs-app .infinite {
-	font-family: monospace;
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    font-style: normal;
 	color: #a9431e;
 	display: block;
 	margin-top: -1.4em;
+	font-size: 4.0vmax;
 }
 
 #typewriterjs-app .Typewriter__cursor {
 	font-weight: normal;
+}
+
+.hn-medium {
+    font-family: 'Helvetica Neue';
+    font-weight: 500;
+    font-style: normal;
+}
+
+.hn-bold {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* Desktop view if width at least min-width */
@@ -319,6 +375,10 @@ a:hover {
 	
 	.contact-details {
 		padding: 0 60px;
+	}
+	
+	#typewriterjs-app .customLine3 img {
+		max-width: 30px;
 	}
 
 }
