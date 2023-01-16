@@ -6,62 +6,83 @@ window.onload = function(){
 	var typewriter = new Typewriter(app, {
 		loop: false,
 		delay: 30, // Typing speed
-		deleteSpeed : 0
+		deleteSpeed : 10
 	});
 	
-	var charFrown = '\u2322';
-	var charSmile = '\u2323';
-	var charCloseup = '\u2050';
+	//var charFrown = '<span class="hn-medium">\u2322</span>';
+	var charFrown = '<span class="hn-medium">\&frown;</span>';
+	//var charSmile = '<span class="hn-medium">\u2323</span>';
+	var charSmile = '<span class="hn-medium">&smile;</span>';
+	var charCloseup = '<span class="hn-bold">\u2050</span>';
 	var charSpace = '\xa0';
-	var charDoubleQuotesLeft = '\u030F';
-	var charDoubleQuotesRight = '\u02DD';
-	var charLowX = '<span class="lowPosition">\u00d7</span>';
-	var charLambda = '<span class="flip">y</span>';
+	//var charDoubleQuotesLeft = '<span class="hn-medium">\u030F</span>';
+	var charDoubleQuotesLeft = '<span class="hn-medium">``</span>';
+	//var charDoubleQuotesRight = '<span class="hn-medium">\u02DD</span>';
+	var charDoubleQuotesRight = '<span class="hn-medium">´´</span>';
+	var charLowX = '<span class="hn-medium lowPosition">\u00d7</span>';
+	//var charLambda = '<span class="hn-medium flip">y</span>';
+	var charLambda = '<span class="hn-medium lambda">&lambda;</span>';
 	var charSmileCustom = '<span class="customLine">' + charSmile + '</span>';
-	var charInfinite = '<span class="infinite">\u221e</span>';
-	var charArrowDown = '<span class="customLine2">\u21e9</span>';
+	var charSmileCustom2 = '<span class="customLine2">' + charSmile + '</span>';
+	var charInfinite = '<span class="hn-bold infinite">\u221e</span>';
+	//var charArrowDown = '<span class="customLine3">\u21e9</span>';
+	var charArrowDown = '<span class="customLine3"><img src="images/8-bit-arrow.png" border="0"></span>';
+	
+	var charBracketLeft = '<span class="hn-bold">(</span>';
+	var charBracketRight = '<span class="hn-bold">)</span>';
+	var charEye = '<span class="hn-medium">ө</span>';
+	var charPipe = '<span class="hn-medium">|</span>';
+	var charSlashLeft = '<span class="hn-bold">\\</span>';
+	var charSlashRight = '<span class="hn-bold">/</span>';
+	
+	var charNonsense1 = '<span class="hn-medium">"1"</span>';
+	var charNonsense2 = '<span class="hn-medium">* 8 *</span>';
+	var charNonsense3 = '<span class="hn-medium">"/' + charFrown + charFrown + '/"</span>';
+	var charNonsense4 = '<span class="hn-medium">' + charCloseup + '@=@' + charCloseup + '</span>';
+	var charNonsense5 = '<span class="hn-medium">4</span>';
+	var charNonsense6 = '<span class="hn-medium">6 I)(l 9</span>';
+	var charNonsense7 = '<span class="hn-medium">p</span>';
 
 	typewriter.typeString('')
-		.typeString('')
 		.pauseFor(2000)
-		.typeString('"1"')
+		.typeString(charNonsense1)
 		.typeString('<br>')
-		.typeString(charSpace + '* 8 *')
-		.pauseFor(500)
+		.typeString(charSpace + charNonsense2)
+		.pauseFor(1000)
 		.deleteAll()
-		.typeString('"/' + charFrown + charFrown + '/"')
-		.pauseFor(500)
+		.typeString(charNonsense3)
+		.pauseFor(1000)
 		.typeString('<br>')
-		.typeString(charCloseup + '@=@' + charCloseup)
+		.typeString(charNonsense4)
 		.typeString('<br>')
-		.typeString('4')
+		.typeString(charNonsense5)
 		.typeString('<br>')
 		.typeString('(')
-		.pauseFor(500)
+		.pauseFor(1000)
 		.deleteAll()
 		.typeString(charFrown + charFrown)
 		.typeString('<br>')
-		.typeString(charCloseup + '(ө' + charDoubleQuotesLeft + charSpace + ' | ' + charDoubleQuotesRight + 'ө)' + charCloseup)
+		.typeString(charCloseup + charBracketLeft + charEye + charDoubleQuotesLeft + charSpace + charPipe + charSpace + charDoubleQuotesRight + charEye + charBracketRight + charCloseup)
 		.typeString('<br>')
-		.typeString('6 I)(l 9')
+		.typeString(charNonsense6)
 		.typeString('<br>')
-		.typeString(charSpace + 'p')
+		.typeString(charSpace + charNonsense7)
 		.pauseFor(1500)
-		.deleteChars(17)
-		.typeString(' | ' + charDoubleQuotesRight + 'ө)' + charCloseup)
+		.deleteChars(19)
+		.typeString(charSpace + charPipe + charSpace + charDoubleQuotesRight + charEye + charBracketRight + charCloseup)
 		.typeString('<br>')
-		.typeString('\\ | ' + charSpace + ' | /')
+		.typeString(charSlashLeft + charSpace + charPipe + charSpace + charSpace + charSpace + charSpace + charPipe + charSpace + charSlashRight)
 		.typeString('<br>')
 		.typeString(charLowX)
 		.typeString('<br>')
 		.typeString(charSmileCustom)
 		.pauseFor(2000)
-		.deleteChars(11)
-		.typeString(' | ' + charSpace + ' | /')
+		.deleteChars(13)
+		.typeString(charSpace + charPipe + charSpace + charSpace + charSpace + charSpace + charPipe + charSpace + charSlashRight)
 		.typeString('<br>')
 		.typeString(charLambda)
 		.typeString('<br>')
-		.typeString(charSmileCustom)
+		.typeString(charSmileCustom2)
 		.callFunction(() => {
 			document.getElementsByClassName('Typewriter__cursor')[0].style.display = 'none';
 		})
