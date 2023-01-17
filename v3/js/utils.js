@@ -9,25 +9,20 @@ window.onload = function(){
 		deleteSpeed : 10
 	});
 	
-	//var charFrown = '<span class="hn-medium">\u2322</span>';
-	var charFrown = '<span class="hn-medium">\&frown;</span>';
-	//var charSmile = '<span class="hn-medium">\u2323</span>';
-	var charSmile = '<span class="hn-medium">&smile;</span>';
-	var charCloseup = '<span class="hn-bold">\u2050</span>';
 	var charSpace = '\xa0';
-	//var charDoubleQuotesLeft = '<span class="hn-medium">\u030F</span>';
+	var charFrown = '<span class="hn-medium">\ufe35</span>';
+	var charSmile = '<span class="hn-medium">\ufe36</span>';
+	var charCloseup = '<span class="hn-bold">\u2050</span>';
 	var charDoubleQuotesLeft = '<span class="hn-medium">``</span>';
-	//var charDoubleQuotesRight = '<span class="hn-medium">\u02DD</span>';
 	var charDoubleQuotesRight = '<span class="hn-medium">´´</span>';
 	var charLowX = '<span class="hn-medium lowPosition">\u00d7</span>';
-	//var charLambda = '<span class="hn-medium flip">y</span>';
 	var charLambda = '<span class="hn-medium lambda">&lambda;</span>';
+	var charFrownCustom = charSpace + charFrown + charSpace;
+	
 	var charSmileCustom = '<span class="customLine">' + charSmile + '</span>';
 	var charSmileCustom2 = '<span class="customLine2">' + charSmile + '</span>';
 	var charInfinite = '<span class="hn-bold infinite">\u221e</span>';
-	//var charArrowDown = '<span class="customLine3">\u21e9</span>';
 	var charArrowDown = '<span class="customLine3"><img src="images/8-bit-arrow.png" border="0"></span>';
-	
 	var charBracketLeft = '<span class="hn-bold">(</span>';
 	var charBracketRight = '<span class="hn-bold">)</span>';
 	var charEye = '<span class="hn-medium">ө</span>';
@@ -37,7 +32,7 @@ window.onload = function(){
 	
 	var charNonsense1 = '<span class="hn-medium">"1"</span>';
 	var charNonsense2 = '<span class="hn-medium">* 8 *</span>';
-	var charNonsense3 = '<span class="hn-medium">"/' + charFrown + charFrown + '/"</span>';
+	var charNonsense3 = '<span class="hn-medium">"/' + charFrownCustom + charFrownCustom + '/"</span>';
 	var charNonsense4 = '<span class="hn-medium">' + charCloseup + '@=@' + charCloseup + '</span>';
 	var charNonsense5 = '<span class="hn-medium">4</span>';
 	var charNonsense6 = '<span class="hn-medium">6 I)(l 9</span>';
@@ -60,7 +55,7 @@ window.onload = function(){
 		.typeString('(')
 		.pauseFor(1000)
 		.deleteAll()
-		.typeString(charFrown + charFrown)
+		.typeString(charFrownCustom + charFrownCustom)
 		.typeString('<br>')
 		.typeString(charCloseup + charBracketLeft + charEye + charDoubleQuotesLeft + charSpace + charPipe + charSpace + charDoubleQuotesRight + charEye + charBracketRight + charCloseup)
 		.typeString('<br>')
