@@ -362,7 +362,7 @@ a:hover {
 
 	.header {
 		height: 100vh;
-		max-height: 100vh;
+		max-height: 90vh;
 	}
 
 	.header .title, .footer .title {
