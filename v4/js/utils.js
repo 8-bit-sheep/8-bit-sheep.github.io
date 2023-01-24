@@ -6,7 +6,7 @@ window.onload = function(){
 	var typewriter = new Typewriter(app, {
 		loop: false,
 		delay: 30, // Typing speed
-		deleteSpeed : 10
+		deleteSpeed: 10 // Delete speed
 	});
 	
 	var charSpace = '\xa0';
