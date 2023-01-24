@@ -390,7 +390,7 @@ a:hover {
 }
 
 /* Tablet view if width at least min-width */
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 730px) {
 
 	.header, #typewriterjs-app {
 		height: 100vh;
