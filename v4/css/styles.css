@@ -316,6 +316,7 @@ a:hover {
 	font-size: 4.6vmax;
 	font-weight: bold;
 	color: #ffffff;
+	height: 380px;
 }
 
 #typewriterjs-app .flip {
@@ -391,7 +392,7 @@ a:hover {
 /* Tablet view if width at least min-width */
 @media only screen and (min-width: 760px) {
 
-	.header {
+	.header, #typewriterjs-app {
 		height: 100vh;
 		max-height: 65vh;
 	}
@@ -401,7 +402,7 @@ a:hover {
 /* Desktop view if width at least min-width */
 @media only screen and (min-width: 1024px) {
 
-	.header {
+	.header, #typewriterjs-app {
 		height: 100vh;
 		max-height: 80vh;
 	}
@@ -415,7 +416,7 @@ a:hover {
 /* Desktop view if width at least min-width */
 @media only screen and (min-width: 1300px) {
 
-	.header {
+	.header, #typewriterjs-app {
 		height: 100vh;
 		max-height: 90vh;
 	}
@@ -437,7 +438,7 @@ a:hover {
 /* Desktop view if width at least min-width */
 @media only screen and (min-width: 1500px) {
 
-	.header {
+	.header, #typewriterjs-app {
 		height: 100vh;
 		max-height: 100vh;
 	}
