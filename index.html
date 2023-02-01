@@ -1,453 +1,261 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<!-- 2018-08-31 Fri 14:31 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>8-bit-sheep</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="sheep in sheep's clothing" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
-<link rel="stylesheet" type="text/css" href="./8bs.css"/>
-<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
-<link rel="stylesheet" type="text/css" href="./8bs.css"/>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Digital and Data Strategy Boutique">
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+<!-- Facebook tags -->
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://8-bit-sheep.com/images/fb-icon-8-bit-sheep.jpg"/>
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:title" content="8-bit-sheep"/>
+<meta property="og:url" content="https://8-bit-sheep.com"/>
+<meta property="og:site_name" content="8-bit-sheep"/>
+<meta property="og:description" content="Digital and Data Strategy Boutique"/>
+<meta property="fb:app_id" content="1227445824843725" />
 
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script type="text/javascript" src="js/typewriterjs/core.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
 
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//analytics.8-bit-sheep.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PHPBW5Z');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
-<div id="content">
-<h1 class="title">8-bit-sheep</h1>
 
-<div class="figure">
-<p><img src="logoanimation.gif" alt="logoanimation.gif" />
-</p>
-</div>
+<section class="container">
 
-<div class="org-center">
-<p>
-<a href="https://twitter.com/8_bit_sheep">@8_bit_sheep</a> | info@8-bit-sheep.com 
-</p>
-</div>
+	<div class="header">
+		<div id="typewriterjs-app" aria-hidden="true"></div>
+		
+		<div class="title" tabindex="1">8-bit-sheep</div>
+		<div class="contact-details">
+			<a href="mailto:info@8-bit-sheep.com" title="Email: info@8-bit-sheep.com" tabindex="2">info@8-bit-sheep.com</a><br>
+			<a href="tel:+358405182981" title="Phone: +358 40 518 2981" tabindex="3">+358 40 518 2981</a>
+		</div>
+		<span class="customLine3" aria-hidden="true"><img src="images/8-bit-arrow.png" border="0"></span>
+	</div>
+		
+	<div class="content-box" tabindex="10">
+		<div class="desc">“I’m a humanist that dreams of 8-bit sheep.”</div>
+		That's how Sami Kallinen, the co-founder of 8-bit-sheep, introduced himself on Twitter for many years. The company name refers to Philip K. Dick's classic sci-fi novel Do Androids Dream of Electric Sheep and the necessary combination of arts and technology.
+	</div>
+	
+	<div class="content-box variation2" tabindex="20">
+		<h1>Digital and Data Strategy Boutique</h1>
+	</div>
+	
+	<div class="content-box variation3" tabindex="30">
+		<div class="desc">This sheep means business</div>
+		AI. Architecting systems. Auditing business needs. Auditing ecosystems. Building teams. Buyer side consulting. Coaching. Community building. Coordinating complex multi-stakeholder initiatives. Customer analytics. Customer Data Platform design. Customer experience measurement. Customer insight collection. Customer insights and analytics. CX analysis. CX optimization. Data Engineering. Data Science. Data visualisation. Digital analytics system evaluations. Digital analytics system implementation. Digital development. Digital experience optimization. Digital experience personalization. Digital strategy creation. Facilitation. Identity solutions. Internal capability development. Keynote speakers. Leadership. Machine Learning. Management. Marketing Technology & Digital Data. Mentoring. Product and project management. Reporting technologies. Research. Roadmap design. Software Engineering. Sparring. Technical management mentoring. Tender preparation. Training and coaching. User research. Vendor selection. Workshop design.
+	</div>
+	
+	<div class="content-box" tabindex="40">
+		<div class="title">Competence</div>
+		<div class="desc">We do consulting for strong brands</div>
+	</div>
+	
+	<div class="content-box variation4" tabindex="50">
+		<div class="title">Competence</div>
+		<div class="desc">We help with problems regarding the digital in general and data in particular</div>
+	</div>
+	
+	<div class="content-box variation5" tabindex="60">
+		<div class="desc">User experience, data and analytics</div>
+	</div>
+	
+	<div class="content-box" tabindex="70">
+		<div class="title">Competence</div>
+		<div class="desc">These clever little lambs…</div>
+	</div>
+	
+	<div class="content-box variation2" tabindex="80">
+		<div class="desc">…all senior and acclaimed in their fields, work on the most difficult problems in the space</div>
+	</div>
+	
+	<div class="content-box" tabindex="90">
+		<div class="desc">We help clients make sense of all the buzzwords</div>
+	</div>
+	
+	<div class="content-box variation5" tabindex="100">
+		<div class="desc">Data science, machine learning, AI, <span class="line-through">vim</span>, emacs or blockchains</div>
+	</div>
+	
+	<div class="content-box" tabindex="200">
+		<div class="title">Competence</div>
+		<div class="desc">We've seen things few people would've believed</div>
+	</div>
+	
+	<div class="content-box variation4" tabindex="210">
+		<div class="desc">The media industry was just the start, you're probably next</div>
+	</div>
+	
+	<div class="content-box" tabindex="220">
+		<div class="desc">We can help you dream of 8-bit-sheep</div>
+	</div>
+	
+	<div class="content-box variation4">
+		<div class="title">The Flock (in order of appearance)</div>
+		<div class="desc lowercase" tabindex="230">Sami Kallinen // @sakalli</div>
+		The company Bellwether
 
-<div id="outline-container-org6981188" class="outline-2">
-<h2 id="org6981188">Digital and Data Strategy Boutique</h2>
-</div>
-<div id="outline-container-org868b79d" class="outline-2">
-<h2 id="org868b79d">This sheep means business</h2>
-</div>
-<div id="outline-container-orgff466c1" class="outline-2">
-<h2 id="orgff466c1">We do consulting for strong brands</h2>
-</div>
-<div id="outline-container-orge834a31" class="outline-2">
-<h2 id="orge834a31">We help with problems regarding the digital in general and data in particular</h2>
-</div>
-<div id="outline-container-org8e64b32" class="outline-2">
-<h2 id="org8e64b32">Transformation, enterprise innovation, technology,</h2>
-</div>
-<div id="outline-container-orgaa82b75" class="outline-2">
-<h2 id="orgaa82b75">user experience, data and analytics.</h2>
-</div>
-<div id="outline-container-org5472f75" class="outline-2">
-<h2 id="org5472f75">These clever little lambs…</h2>
-</div>
-<div id="outline-container-orgfce606c" class="outline-2">
-<h2 id="orgfce606c">&#x2026;all senior and acclaimed in their fields, work on the most difficult problems in the space</h2>
-</div>
-<div id="outline-container-org9f1ce92" class="outline-2">
-<h2 id="org9f1ce92">We help clients make sense of all the buzzwords</h2>
-</div>
-<div id="outline-container-orgb2f3a72" class="outline-2">
-<h2 id="orgb2f3a72"><b>Data science</b>, <i>machine learning</i>, AI, <del>vim</del>, emacs or <span class="underline">blockchains</span></h2>
-</div>
-<div id="outline-container-org3ab5a60" class="outline-2">
-<h2 id="org3ab5a60">Using a pool of the most talented professionals in their field, 8-bit-sheep teams are purpose built to fit the clients problems</h2>
-</div>
-<div id="outline-container-orgeaee522" class="outline-2">
-<h2 id="orgeaee522">We've seen things few people would've believed</h2>
-</div>
-<div id="outline-container-org81ed951" class="outline-2">
-<h2 id="org81ed951">The media industry was just the start, you're probably next</h2>
-</div>
-<div id="outline-container-orgd1028e4" class="outline-2">
-<h2 id="orgd1028e4">We can help you dream of 8-bit-sheep</h2>
-</div>
-<div id="outline-container-org96fc92c" class="outline-2">
-<h2 id="org96fc92c">The Flock:</h2>
-</div>
-<div id="outline-container-orgc7995fa" class="outline-2">
-<h2 id="orgc7995fa">The Company Bellwether</h2>
-<div class="outline-text-2" id="text-orgc7995fa">
-<div class="org-center">
+		<div class="sheep"><img src="images/sami_kallinen.jpg" alt="Sami Kallinen" tabindex="235"></div>
+		Sami is a humanist who founded his first professional online media service 25 years ago and has experience in data and AI, visionary leadership, and media. He has held positions as CDO and CTO at various companies, including the Finnish Broadcasting Company and KSF Media, where he implemented radical transformation programs in product development and leadership. He is also a Lisp coder and writes Clojure code daily. He is currently active in 8-bit-sheep, a consultancy that helps companies with digital transformation and putting data and AI into practice.
+	</div>
+	
+	<div class="content-box">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="240">Leevi Kokko // @leevikokko</div>
+		Senior Baartner
 
-<div class="figure">
-<p><img src="sami-by-aino.jpg" alt="sami-by-aino.jpg" />
-</p>
-</div>
-</div>
-<p>
-<a href="https://twitter.com/sakalli"> Sami Kallinen @sakalli</a>, aptly titled as the company’s bellwether, is part of the generation who first hacked 8-bit computers in the early 80’s. A seasoned executive with three superpowers — data &amp; AI, visionary leadership, and media. For Sami, transformation is about understanding that everything today is software.
-Kallinen founded his first professional online media service almost 25 years ago. For three years he worked in the CDO role at Yle, the Finnish Broadcasting Company, where he was responsible for driving the modernisation of the application architecture, and introducing AI and data platforms early on to the organisation. Later, he worked in the management team of KSF Media for two years with CDO &amp; CTO responsibilities. Sami has implemented radical transformation programmes both in terms of product development and leadership. Since 4 - 5 years ago, when it became apparent that data &amp; AI are both a question of business hygiene and competitive advantage, the subject has very much been at the centre of Sami’s focus.
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/leevi_kokko.jpg" alt="Leevi Kokko" tabindex="245"></div>
+		Leevi has been online for the past 20 years, always driving change, whether on the client side or as a consultant. Leevi likes to help brands understand customers on all levels, utilizing methods from market intelligence, surveys and focus groups to analysis of digital data in all its forms.
+		<br><br>
+		During the past couple of years, Leevi has been one of the driving forces behind the national identity project, orchestrated by the Suomen Tunnistautumisosuuskunta co-operative. Additionally Leevi is currently leading the national online media measurement (FIAM) operations, and engaged in multiple cross-channel audience measurement initiatives within the media industry.
+		<br><br>
+		Leevi began his career at Sonera, moved on to Satama Interactive and from there to start Finland's first service design agency Ego Beta. He joined e-commerce startup Fruugo as business analytics manager and later Fonecta as the marketing manager for digital services. At Yle Leevi built digital analytics practice from ground up, and started Yle Tunnus. Before joining 8-bit-sheep as a partner Leevi spent two years at DNA where he lead the B2C commercial operations team within the Online unit.
 
-<div id="outline-container-org9b6b7ee" class="outline-2">
-<h2 id="org9b6b7ee">Senior Baartner</h2>
-<div class="outline-text-2" id="text-org9b6b7ee">
-<div class="org-center">
+	</div>
+	
+	<div class="content-box variation4">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="250">Jaakko Ojalehto // @zeikko</div>
+		Full Stack Baad-ass
 
-<div class="figure">
-<p><img src="leevi.jpg" alt="leevi.jpg" />
-</p>
-</div>
-</div>
-<p>
-<a href="https://twitter.com/leevikokko"> Leevi Kokko @leevikokko</a> has been online for the past 20 years, always driving change, whether on the client side or as a consultant. Leevi likes to help brands understand customers on all levels, utilizing methods from market intelligence, surveys and focus groups to analysis of digital data in all its forms.
-Leevi began his career at Sonera, moved on to Satama Interactive and from there to start Finland’s first service design agency Ego Beta. He joined e-commerce startup Fruugo as business analytics manager and later Fonecta as the marketing manager for digital services. At Yle Leevi built digital analytics practice from ground up, and started Yle Tunnus. Before joining 8-bit-sheep as a partner Leevi spent two years at DNA where he lead the B2C commercial operations team within the Online unit.
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/jaakko_ojalehto.jpg" alt="Jaakko Ojalehto" tabindex="255"></div>
+		Jaakko is a full stack developer who enjoys making the world a better place by creating the tools that enable people to level up their lives. This has included web analytics tools for journalists, visually stunning news websites for young adults and a news mobile application where you can converse and vote for things that matter. Jaakko goes nuts over test automation, code coverage, code linting, code reviews, continuous integration, infrastructure as code and other ways to build high performance quality apps that are easy to maintain and develop further.
+		<br><br>
+		Jaakko built his first commercial website in the age of 15, since then he has been on a ride that took him to master HTML, CSS, SQL, JavaScript, PHP and more. He got into the world of web analytics, social media, search engine optimization and marketing while working for NetBooster in Helsinki and Paris. At Yle Jaakko developed tools and products ranging from inhouse analytics to mobile apps used by hundreds of thousands of customers. In the past 4 years Jaakko has mostly been using JavaScript, Node.js React, React Native, AWS, Docker, Terraform, Redis and PostgreSQL.
+	</div>
+	
+	<div class="content-box">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="260">Henri Kinnunen // @hkinnunen</div>
+		Front and Bääkend Ram
 
-<div id="outline-container-org0458f0a" class="outline-2">
-<h2 id="org0458f0a">Full Stack Baad-ass</h2>
-<div class="outline-text-2" id="text-org0458f0a">
-<div class="org-center">
+		<div class="sheep"><img src="images/sheep_placeholder.jpg" alt="Henri Kinnunen" tabindex="265"></div>
+		Henri has a long history in tech. He's been working in the field for over 10 years mostly as a software engineer. He's fanatic about building quality software that just works. It includes delivering state-of-the art continuous delivery and well tested software as well as polishing the processes of how software is build.
+		<br><br>
+		Henri has experienced how it is to work as a consultant as well as a team member of a fast growing startup. He's a full-stack software engineer who is able to help customers in every step of the process of creating software. Henri has devops mentality and hands-on software development experience from wide-variety of business domains including but not limited to: banking, telecommunications, social marketing, online gaming and media. 
+		<br><br>
+		Henri's currently interested in Golang and Kubernetes, but he has also worked with technologies like Node.js, Python and Clojure. Henri is also fluent with front-end such as React.
+	</div>
+	
+	<div class="content-box variation4">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="270">Simo Ahava // @SimoAhava</div>
+		Sheep Analytics Officer
 
-<div class="figure">
-<p><img src="zeikko.jpg" alt="zeikko.jpg" />
-</p>
-</div>
-</div>
-<p>
-<a href="https://twitter.com/zeikko"> Jaakko Ojalehto @zeikko</a> Jaakko is a full stack developer who enjoys making the world a better place by creating the tools that enable people to level up their lives. This has included web analytics tools for journalists, visually stunning news websites for young adults and a news mobile application where you can converse and vote for things that matter. Jaakko goes nuts over test automation, code coverage, code linting, code reviews, continuous integration, infrastructure as code and other ways to build high performance quality apps that are easy to maintain and develop further.
-Jaakko built his first commercial website in the age of 15, since then he has been on a ride that took him to master HTML, CSS, SQL, JavaScript, PHP and more. He got into the world of web analytics, social media, search engine optimization and marketing while working for NetBooster in Helsinki and Paris. At Yle Jaakko developed tools and products ranging from inhouse analytics to mobile apps used by hundreds of thousands of customers. In the past 4 years Jaakko has mostly been using JavaScript, Node.js React, React Native, AWS, Docker, Terraform, Redis and PostgreSQL. 
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/simo_ahava.jpg" alt="Simo Ahava" tabindex="275"></div>
+		Simo Ahava is a recognized expert on customizing web analytics and tag management solutions to improve the entire “life cycle” of data collection, processing, and reporting. His main areas of expertise lie with Google Analytics and Google Tag Manager, and Google has appointed him as a Google Developer Expert in these fields. He is especially interested in communication structures within organizations, as he firmly believes that communication breakdowns are the underlying cause to practically all data-related problems.
+		<br><br>
+		Simo is particularly invested in demystifying analytics development work, and his main focus is on increasing awareness, skills, and critical thinking around data and development.
+		<br><br>
+		Simo is also co-founder of <a href="https://www.teamsimmer.com/">Simmer</a>, an online learning platform for technical marketers.
+		<br><br>
+		Among other things, Simo writes a popular blog on all things Google Analytics and Google Tag Manager development at <a href="https://www.simoahava.com/">www.simoahava.com</a>. An experienced speaker and prolific blogger, Simo can be seen and heard in conferences, product forums, support communities, and developer meet-ups alike.
+	</div>
+	
+	<div class="content-box">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="280">Teemu Keskitalo // @temeke</div>
+		Full Stack GraphQL Evangelist
 
-<div id="outline-container-org2e2addf" class="outline-2">
-<h2 id="org2e2addf">Front and Bääkend Ram</h2>
-<div class="outline-text-2" id="text-org2e2addf">
-<div class="org-center">
+		<div class="sheep"><img src="images/teemu_keskitalo.jpg" alt="Teemu Keskitalo" tabindex="285"></div>
+		Teemu is a really proactive and experienced technical consultant interested in software architecture trends and new technologies. He thinks that the developer experience is key to successful projects. When tools, culture, and practices are in order, people start to have the feeling of success, and they start to work as an effective team. Teemu always does his best to push the work environment in that direction.
+		<br><br>
+		He has over 10 years of developer experience in a variety of technologies and roles. The current stack is TypeScript, AWS, React, Python, and of course GraphQL which he has used in all of his projects during the last five years. Teemu sees GraphQL as much more than just technology, as in some cases it can help solve larger architecture problems, and even help teams work better together, and reuse more of their backend code.
+		<br><br>
+		Teemu loves to help others, and he is always eager to learn new things — maybe that's why the role of a GraphQL evangelist has become part of his personality.
+	</div>
+	
+	<div class="content-box variation4">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="290">Taneli Salonen // @Taneli</div>
+		Senior Analytics Engineer
 
-<div class="figure">
-<p><img src="hequ.jpg" alt="hequ.jpg" />
-</p>
-</div>
-</div>
-<p>
-<a href="https://twitter.com/hkinnunen"> Henri Kinnunen @hkinnunen</a> has a long history in tech. He's been working in the field for almost 10 years mostly as a software engineer. He's fanatic about building quality software that just works. It includes delivering state-of-the art build pipelines and well tested software as well as polishing the processes of how software is build.
-Henri has experienced how it is to work as a consultant as well as a team member of a fast growing startup. He's a full-stack software engineer who is able to help customers in every step of the process of creating software. Henri has devops mentality and hands-on software development experience from wide-variety of business domains including but not limited to: banking, telecommunications, social marketing, online gaming and media.
-Henri's main technical competencies lie on JVM languages such as Java and Scala, but he has also worked with languages like Node.js, Python and Clojure. Henri is also fluent with front-end such as React.
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/taneli_salonen.jpg" alt="Taneli Salonen" tabindex="295"></div>
+		Taneli is a seasoned analytics expert and a former professional poker player. He has experience in doing analytics in a wide range within digital marketing & sales as well as product analytics. He's especially enthusiastic about full-funnel marketing measurement - covering the dots between the marketing channels, website and the CRM, and all the tools involved. The skills for this he has gained from having the experience from both digital marketing agency side as well as CRM and marketing automation consultancy side.
+		<br><br>
+		Having started his analytics career with web analytics implementations, Taneli has gradually expanded his skillset into data visualization and BI tools, data integrations and cloud computing, and data modeling and warehousing. He has the ability to go deep into technical challenges without getting lost in the details.
+		<br><br>
+		Taneli writes an analytics blog at <a href="https://tanelytics.com/">tanelytics.com</a> focusing on technical analytics solutions and is an active contributor to the digital analytics open source community.
+	</div>
+	
+	<div class="content-box">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="300">Anders Nylund // @derssii</div>
+		Full Stack Web Develobaa
 
-<div id="outline-container-org6984041" class="outline-2">
-<h2 id="org6984041">Sheep Analytics Officer</h2>
-<div class="outline-text-2" id="text-org6984041">
-<div class="org-center">
+		<div class="sheep"><img src="images/anders_nylund.jpg" alt="Anders Nylund" tabindex="305"></div>
+		Anders is a highly motivated full-stack web developer who strives for the best. He is a team player that wants to take ownership of the things he is working on. He's able to grasp bigger concepts both technically and organisationally. He thinks that all problems have a solution and that they can be found through discussion, understanding, and compassion. Because of this he is often gravitating towards the role of improving the ways of working of the team, and by that, improving effectiveness of the team to reach the common goal.
+		<br><br>
+		Anders has deep knowledge in full-stack web development technologies, and the past years he's been digging deep into React, Node, TypeScript and Azure. Quality at all layers of web development, e.g. pixel-tweaking, backend speed optimisation, and cloud security, are all really important to him. Being a jack of all trades is really important to him, as he thinks that this is the way he can be the most valuable to the team and the common goal of the project. Because of this he's constantly out of his comfort zone learning and finding out new things during his daily work and spare time.
+	</div>
+	
+	<div class="content-box variation4">
+		<div class="title">The Flock</div>
+		<div class="desc lowercase" tabindex="310">Erik Grönroos // @groner</div>
+		Sheep Analytics & AI Engineer
 
-<div class="figure">
-<p><img src="simo.jpg" alt="simo.jpg" />
-</p>
-</div>
-</div>
-<p>
-<a href="https://twitter.com/SimoAhava"> Simo Ahava @SimoAhava</a> is a recognized expert on customizing web analytics and tag management solutions to improve the entire “life cycle” of data collection, processing, and reporting. His main areas of expertise lie with Google Analytics and Google Tag Manager, and Google has appointed him as a Google Developer Expert in these fields. He is especially interested in the interface between marketing and development, and his main focus is on increasing awareness, skills, and critical thinking around data. Simo also focuses on agile organizations and how to introduce analytics as an integral component in the agile process.
-Simo also writes a popular blog on all things Google Analytics and Google Tag Manager development, data quality, and agile at www.simoahava.com. An experienced speaker and prolific blogger, Simo can be seen and heard in conferences, product forums, support communities, and developer meetups alike.
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/erik_gronroos.jpg" alt="Erik Grönroos" tabindex="315"></div>
+		Erik is an observant analyst and business developer who's passionate about user experience, usability and details that add value to the customer. He gets motivated by intellectual challenges, has strong hands-on attitude and makes things happen. Erik is also an eager advocate of a data-driven experimental culture and one of his mottos is “stop guessing, let's test it and see what the data suggests” (with statistical power of >= 0.80 and p-value < 0.05, naturally).
+		<br><br>
+		Erik has founded <a href="https://analyytikkolehti.fi/">the Analyst magazine (Analyytikko)</a>, Finland's first expert magazine in the field of Data Science, Analytics and Machine Learning, where he also serves as Editor in Chief.
+		<br><br>
+		Erik built his first website in 1996 (at the age of 13) and has +20 years of experience in Web Development (PHP, JS, SQL, Linux systems), +15 years in Business and Process Development, +15 years in Analytics, Statistics, Data Science, AI/ML and +10 years in Technical SEO. Erik has background of nearly 15 years at Elisa (the largest telecommunications, ICT and online service company in Finland), where he worked in several roles during the years, including Customer Service and Process Development and Leading Web Analyst roles (B2C, B2B). Before joining 8-bit-sheep, Erik worked as a Leading Analyst, AI/ML Lead / Data & AI Architect and Data Protection Officer at Generaxion, one of the leading digital marketing specialist companies in Northern Europe.
+	</div>
+	
+	<div class="content-box variation5" tabindex="320">
+		<div class="title">The Shepherds</div>
+		<div class="desc2">Say hi to our shepherds! Say baa to the board of 8-bit-sheep! The board is a wonderful combination of complementing talents and experiences. Together they have a firm command of strategy, digital business development, media and communications as well as ideas and brand building.</div>
+	</div>
+	
+	<div class="content-box variation2">
+		<div class="title">The Shepherds</div>
+		<div class="desc lowercase" tabindex="330">Hanne Kettunen // @HanneKettunen</div>
+		Shepherd
 
-<div id="outline-container-orgcd794ff" class="outline-2">
-<h2 id="orgcd794ff">The Shepherds</h2>
-<div class="outline-text-2" id="text-orgcd794ff">
-<div class="org-center">
+		<div class="sheep"><img src="images/hanne_kettunen.jpg" alt="Hanne Kettunen" tabindex="335"></div>
+		Hanne is an experienced leader in the digital service space with background as a startup founder and working with some of the largest brands in Finland through consultancies such as Avaus and Siili. Currently she works as the COO at Avanto Ventures which works as a bridge between classic brands and the startup space.
+	</div>
+	
+	<div class="content-box">
+		<div class="title">The Shepherds</div>
+		<div class="desc lowercase" tabindex="340">Mary Gestrin // @marygestrin</div>
+		Shepherd
 
-<div class="figure">
-<p><img src="theshepherds.jpg" alt="theshepherds.jpg" />
-</p>
-</div>
-</div>
+		<div class="sheep"><img src="images/mary_gestrin.jpg" alt="Mary Gestrin" tabindex="345"></div>
+		Mary is a seasoned board professional and leader in the media industry. Journalist by trade. Previously she has worked at Yle in many different capacities, amongst others as head of the Areena service. Between 2014-2021 she was head of comms at the Nordic Council of Ministers in Copenhagen. Currently she is director of communications at Konstsamfundet, a private foundation in Helsinki.
+	</div>
+	
+	<div class="content-box variation2">
+		<div class="title">The Shepherds</div>
+		<div class="desc lowercase" tabindex="350">Piëtke Visser // @pietke_works</div>
+		Shepherd
 
-<p>
-Say hi to our shepherds! Say baa to the board of 8-bit-sheep! The board is a wonderful combination of complementing talents and experiences. Together they have a firm command of strategy, digital business development, media and communications as well as ideas and brand building.
-</p>
+		<div class="sheep"><img src="images/pietke_visser.jpg" alt="Piëtke Visser" tabindex="355"></div>
+		Piëtke is the celebrated and prize-winning designer and ideas developer as well as a partner at the agency Kuudes in Helsinki. She is also the creative behind the 8-bit-sheep identity.
+	</div>
+	
+	<div class="footer" tabindex="360">
+		<div class="title">BAA! <3</div>
+		<div class="contact-details">
+			<a href="mailto:info@8-bit-sheep.com" title="Email: info@8-bit-sheep.com" tabindex="361">info@8-bit-sheep.com</a><br>
+			<a href="tel:+358405182981" title="Phone: +358 40 518 2981" tabindex="362">+358 40 518 2981</a>
+		</div>
+	</div>
 
-<p>
-<a href="https://twitter.com/HanneKettunen"> Hanne Kettunen @HanneKettunen</a> is an experienced leader in the digital service space with background as a startup founder and working with some of the largest brands in Finland through consultancies such as Avaus and Siili. Currently she works as the COO at Avanto Ventures which works as a bridge between classic brands and the startup space.
-</p>
+</section>
 
-<p>
-<a href="https://twitter.com/marygestrin"> Mary Gestrin @marygestrin</a> is a seasoned board professional and leader in the media industry. Journalist by trade. In her previous job she was responsible for the Areena service at Yle and currently she leads the communications team at Nordic Council and Nordic Council of Ministers.
-</p>
-
-
-<p>
-<a href="https://twitter.com/ppotkis"> Piëtke Visser @ppotkis</a> is the celebrated and prize-winning designer and ideas developer as well as a partner at the agency Kuudes in Helsinki. She is also the creative behind the 8-bit-sheep identity.
-</p>
-</div>
-</div>
-
-
-
-<div id="outline-container-orgf1fb0bc" class="outline-2">
-<h2 id="orgf1fb0bc"></h2>
-<div class="outline-text-2" id="text-orgf1fb0bc">
-<div class="org-center">
-<p>
-
-</p>
-
-
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgfed3fb8" class="outline-2">
-<h2 id="orgfed3fb8">“I’m a humanist that dreams of 8-bit sheep.”</h2>
-<div class="outline-text-2" id="text-orgfed3fb8">
-<p>
-That’s how Sami Kallinen, the founder of 8-bit-sheep, introduced himself on Twitter for many years. The company name refers to Philip K. Dick’s classic sci-fi novel Do Androids Dream of Electric Sheep and the necessary combination of arts and technology.
-</p>
-
-
-
-
-<div class="org-center">
-<p>
-&#x2014;
-<a href="https://twitter.com/8_bit_sheep">@8_bit_sheep</a> | info@8-bit-sheep.com 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbe2710c" class="outline-2">
-<h2 id="orgbe2710c">Baaa</h2>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: sheep in sheep's clothing</p>
-<p class="date">Created: 2018-08-31 Fri 14:31</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
 </body>
 </html>
