@@ -98,6 +98,10 @@ html, body {
     height: 100%;
 }
 
+#location {
+    color: #ffffff;
+}
+
 body {
 	background: #000000;
 	font-family: 'HelveticaNeueLTPro-Roman';
