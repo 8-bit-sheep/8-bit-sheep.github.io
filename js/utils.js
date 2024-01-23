@@ -165,10 +165,15 @@ window.onload = function(){
 				})
 				.sort();
 
-			resultDiv.innerText = validCities.join(' | ');
+			// Show the data with 1 sec delay, to preserve time for the loading placeholder
+			setTimeout(function(){
+				resultDiv.innerText = validCities.join(' | ');
+			}, 1000);
+			
 		} catch (error) {
 			console.error('Fetch data error: ', error);
 		}
+		
 	};
 
 	// Initial Call
@@ -176,5 +181,48 @@ window.onload = function(){
 
 	// Fetches the csv every 4 hours and re-renders the locations element 
 	setInterval(fetchDataAndRender, 1000*60*60*1);
+
+	/* Flock sheep gallery shuffle */
+	function shuffle(array) {
+		var currentIndex = array.length,
+			temporaryValue, randomIndex;
+
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+		}
+
+		return array;
+	}
+
+	// Get the DOM object of the parent div
+	//const container = document.querySelector('.flock-container');
+	const container = document.querySelectorAll('.flock-container')[0];
+	
+	// Check if the element exists
+	if (typeof(container) != 'undefined' && container != null) {
+
+		// Turn container.children, which is an HTMLCollection, into an array
+		// See https://stackoverflow.com/a/222847 for more on this
+		const children = [...container.children];
+
+		// The shuffle function above mutates the argument, so here we shuffle
+		// the array of children; note that this is not yet reflected in the DOM
+		shuffle(children);
+
+		// Reinsert the children to the parent according to the new order
+		for (const child of children) {
+			container.appendChild(child);
+		}
+	
+	}
 
 }
