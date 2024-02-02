@@ -254,6 +254,56 @@ h1, .desc {
 	font-weight: bold;
 }
 
+.flock-container {
+    text-align: center;
+}
+/*
+.reference-cases-container {
+	margin-top: 60px;
+}
+*/
+.flock {
+	display: inline-block;
+	padding: 0 20px 20px 0;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.flock-v2 {
+	color: #000000;
+}
+
+.freelambers {
+	color: #000000;
+}
+/*
+.reference-case-item {
+	display: inline-block;
+	padding: 0 30px 25px 0;
+}
+*/
+.flock img {
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+}
+/*
+.reference-case-item img {
+	height: 60px;
+	vertical-align: middle;
+}
+*/
+.flock-title {
+	font-size: 26px;
+	line-height: 1.0em;
+	text-align: left;
+}
+
+.flock-desc {
+	font-size: 14px;
+	text-align: left;
+}
+
 .sheep {
 	text-align: center;
 }
@@ -428,6 +478,10 @@ a:hover {
 		height: 100vh;
 		max-height: 38vh;
 	}
+	
+	.flock-container {
+		text-align: left;
+	}
 
 }
 
@@ -480,6 +534,10 @@ a:hover {
 /* Desktop view if width at least min-width */
 @media only screen and (min-width: 1500px) {
 
+	body, .contact-details a, #location  {
+		font-size: 1.2vmax;
+	}
+
 	.header {
 		height: 100vh;
 		max-height: 100vh;
@@ -488,6 +546,84 @@ a:hover {
 	#typewriterjs-app {
 		height: 100vh;
 		max-height: 55vh;
+	}
+	
+	.contact-details, .desc2, .flock-title {
+		font-size: 1.7vmax;
+	}
+	
+	.flock-desc {
+		font-size: 0.9vmax;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 1650px) {
+
+	.flock img {
+		width: 310px;
+		height: 310px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 1800px) {
+
+	.flock img {
+		width: 350px;
+		height: 350px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 2100px) {
+
+	.flock img {
+		width: 450px;
+		height: 450px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 2400px) {
+
+	.flock img {
+		width: 550px;
+		height: 550px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 2700px) {
+
+	.flock img {
+		width: 650px;
+		height: 650px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 3000px) {
+
+	.flock img {
+		width: 750px;
+		height: 750px;
+	}
+
+}
+
+/* Desktop view if width at least min-width */
+@media only screen and (min-width: 3200px) {
+
+	.flock img {
+		width: 1000px;
+		height: 1000px;
 	}
 
 }
